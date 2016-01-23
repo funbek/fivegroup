@@ -1,0 +1,27 @@
+{
+  "name": "new-gulp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "bourbon": "^4.2.6",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-sass": "^2.1.1",
+    "gulp-useref": "^3.0.4"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "*",
+    "gulp": "*",
+    "gulp-imagemin": "*",
+    "gulp-rigger": "*",
+    "gulp-rimraf": "*",
+    "gulp-sourcemaps": "*",
+    "gulp-uglify": "*",
+    "gulp-watch": "*",
+    "gulp.spritesmith": "*",
+    "imagemin-pngquant": "*",
+    "gulp-sass": "^2.1.1"
+  }
+}

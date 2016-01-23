@@ -1,0 +1,143 @@
+// Import Susy
+@import "../../bower_components/susy/sass/_susy.scss";
+// Import reset.scss
+@import "../../bower_components/reset-css/_reset.scss";
+// Import bourbon
+@import "../../bower_components/bourbon/app/assets/stylesheets/_bourbon.scss";
+// My variables
+@import "inc/_site-variables.scss";
+
+$gutter-width: 10px;
+$grid-padding: 10px;
+
+// Setting up the Magic Grid
+$gutter-width: 10px; // with 1em gutters
+$grid-padding: 10px; // and 1em padding on the grid container
+
+$susy: (
+  flow: ltr,
+  columns: 12,
+  container: 1200px,
+  global-box-sizing: border-box,
+  // debug: (image: show),
+  math: fluid,
+  output: isolate,
+  gutter-position: inside,
+);
+
+.row {
+	@include container();
+	margin-left: -$gutter-width/2;
+	margin-right: -$gutter-width/2;
+}
+
+// ++==++
+// Базовые значения, вынести в переменные
+$g-yellow: #ffcd43;
+$g-dark-blue: #1b1a1b;
+$g-light-blue: #1092dd;
+$g-gray: #ddd;
+$g-dark-gray: #777;
+$g-font-light: 300;
+$g-font-regular: 400;
+$g-font-bold: 500;
+
+// Управление меню
+$menuWidth: 210px;
+$subMenuPosition: $menuWidth - 50px;
+// ++==++
+
+// Заголовки
+h1 {
+	color: $g-light-blue;
+	font-size: 48px;
+	line-height: 36px;
+	font-weight: $g-font-light;
+	margin-bottom: 40px;
+}
+h2 {
+	color: $g-dark-blue;
+	font-size: 30px;
+	line-height: 36px;
+	font-weight: $g-font-light;
+	margin-bottom: 30px;
+}
+h3 {
+	color: $g-dark-blue;
+	font-size: 36px;
+	line-height: 36px;
+	font-weight: $g-font-regular;
+	margin-bottom: 30px;
+}
+h4 {
+	color: $g-dark-blue;
+	font-size: 20px;
+	line-height: 24px;
+	font-weight: $g-font-regular;
+	margin-bottom: 20px;
+}
+
+
+.wrapper-block {
+	width: $mid-wrap;
+	margin-left: 270px;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+* {
+	box-sizing: border-box;
+}
+// ++==++
+
+.wrapper {
+	position: relative;
+}
+
+body {
+	font-family: 'Roboto', Arial, sans-serif;
+	font-size: 16px;
+	line-height: 24px;
+	color: $g-dark-blue;
+	background: url(../img/main-bg.jpg);
+}
+a {
+	@include transition( all .2s ease-in-out );
+}
+
+// Блокируем поднятие подвала выше нижней точки браузера
+.wrapper {
+    min-height: 100%;
+    padding-bottom: 40px;
+    margin-bottom: -188px;
+}
+
+.wrapper:after {
+    content: "";
+    display: block
+}
+
+.footer-site,.wrapper:after {
+    height: 188px;
+}
+// ++==++
+
+
+
+@media (min-width: 1199px) {
+	.wrapper-block {
+		width: $big-wrap;
+	}
+}
+
+@media (max-width: 991px) {
+	.wrapper-block{
+			width: $tablet-wrap;
+	}
+}
+
+@media (max-width: 767px) {
+	.wrapper-block{
+		width: $mobile-wrap;
+		min-width: 320px;
+	}
+}

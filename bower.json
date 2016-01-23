@@ -1,0 +1,39 @@
+{
+  "name": "Diveplanet-store",
+  "description": "Сайт интернет-магазина diveplanet",
+  "main": "",
+  "moduleType": [],
+  "authors": [
+    "Funbek (web_tec@mail.ru)"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "themify-icons": "~0.1.0",
+    "susy": "~2.2.10",
+    "bourbon": "~4.2.6",
+    "reset-css": "~2.0.2011012602",
+    "bxslider-4": "fafnur-bxslider#~4.2.5"
+  },
+  "install": {
+    "base": "vendor",
+    "path": {
+      "js": "{name}/js",
+      "css": "{name}/css",
+      "/[sc|sa]ss$/": "{name}/css",
+      "eot": "{name}/fonts",
+      "svg": "{name}/fonts",
+      "ttf": "{name}/fonts",
+      "woff": "{name}/fonts"
+    },
+    "sources": {}
+  },
+  "devDependencies": {}
+}
