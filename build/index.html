@@ -8,30 +8,11 @@
 		
 		<link rel="stylesheet" href="img/sprite/sprite.css">
 		<link rel="stylesheet" href="css/main.css">
-		<link rel="stylesheet" href="fonts/themify-icons.css">
 		
 		
 		 <!-- Иконки на мобильные устройства -->
-		<link rel="apple-touch-icon" sizes="57x57" href="img/ico/apple-icon-57x57.png">
-		<link rel="apple-touch-icon" sizes="60x60" href="img/ico/apple-icon-60x60.png">
-		<link rel="apple-touch-icon" sizes="72x72" href="img/ico/apple-icon-72x72.png">
-		<link rel="apple-touch-icon" sizes="76x76" href="img/ico/apple-icon-76x76.png">
-		<link rel="apple-touch-icon" sizes="114x114" href="img/ico/apple-icon-114x114.png">
-		<link rel="apple-touch-icon" sizes="120x120" href="img/ico/apple-icon-120x120.png">
-		<link rel="apple-touch-icon" sizes="144x144" href="img/ico/apple-icon-144x144.png">
-		<link rel="apple-touch-icon" sizes="152x152" href="img/ico/apple-icon-152x152.png">
-		<link rel="apple-touch-icon" sizes="180x180" href="img/ico/apple-icon-180x180.png">
-		<link rel="icon" type="image/png" sizes="192x192"  href="/android-icon-192x192.png">
-		<link rel="icon" type="image/png" sizes="32x32" href="img/ico/favicon-32x32.png">
-		<link rel="icon" type="image/png" sizes="96x96" href="img/ico/favicon-96x96.png">
-		<link rel="icon" type="image/png" sizes="16x16" href="img/ico/favicon-16x16.png">
-		<link rel="manifest" href="manifest.json">
-		<meta name="msapplication-TileColor" content="#ffffff">
-		<meta name="msapplication-TileImage" content="img/ico/ms-icon-144x144.png">
-		<meta name="theme-color" content="#ffffff">
 		
 		
-		<link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&amp;subset=latin,cyrillic' rel='stylesheet' type='text/css'>
 		<!--[if lt IE 9]>
 			<script>
 				var e = ("article,aside,figcaption,figure,footer,header,hgroup,nav,section,time").split(',');
@@ -42,938 +23,336 @@
 		<![endif]-->
 	</head>
 	<body>
-		
+
 		<div class="wrapper">
 			<!-- Глваное меню сайта -->
-			<div class="main-nav">
-				<div class="main-nav__logo">
-					<img src="img/logo.png" srcset="img/logo@2.png 2x" alt="Storverk">
-				</div>
-				<div class="scrollable">
-					<div class="main-nav__menu">
+			
+			<div class="main-menu">
+				<div class="wrapper-block">
+					<div class="city">
+						<div class="city__current"><span class="city__current__location">1</span><span class="city__current--set">Омск</span></div>
+						<div class="city__list">
+							<ul>
+								<li class="city__list--get">Санкт-Петербург</li>
+								<li class="city__list--get">Москва</li>
+								<li class="city__list--get">Рязань</li>
+							</ul>
+						</div>
+					</div>
+					<div class="navigation">
 						<nav>
-							<ul class="main-nav__ul">
-								<li class="main-nav__list">
-									<a data-nav-under-level="level--1" href="/" class="main-nav__link">
-										Каталог
-									</a>
+							<ul class="navigation__ul">
+								<li class="navigation__list">
+									<a href="#" class="navigation__link">О компании</a>
 								</li>
-								<li class="main-nav__list">
-									<a data-nav-under-level="level--2" href="/" class="main-nav__link">
-										Доставка и оплата
-									</a>
+								<li class="navigation__list">
+									<a href="#" class="navigation__link">Акции</a>
 								</li>
-								<li class="main-nav__list">
-									<a data-nav-under-level="level--3" href="/" class="main-nav__link">
-										Гарантия и возврат
-									</a>
+								<li class="navigation__list">
+									<a href="#" class="navigation__link">Магазины</a>
 								</li>
-								<li class="main-nav__list">
-									<a data-nav-under-level="level--4" href="/" class="main-nav__link">
-										Помощь
-									</a>
+								<li class="navigation__list">
+									<a href="#" class="navigation__link">Новости</a>
 								</li>
-								<li class="main-nav__list">
-									<a data-nav-under-level="level--5" href="/" class="main-nav__link">
-										О магазине
-									</a>
+								<li class="navigation__list">
+									<a href="#" class="navigation__link">Товары</a>
+								</li>
+								<li class="navigation__list">
+									<a href="#" class="navigation__link">Напишите нам</a>
 								</li>
 							</ul>
 						</nav>
 					</div>
-					<!-- Ссылки для личного кабинета -->
-					<div class="main-nav__personal">
-						<div class="main-nav__personal__head">
-							Личный кабинет
-						</div>
-						<div class="main-nav__personal__block">
-							<div class="main-nav__personal__b">
-								<a href="/" class="main-nav__personal__link">вход</a>
-							</div>
-							<div class="main-nav__personal__b">
-								<a href="/" class="main-nav__personal__link">регистрация</a>
-							</div>
-						</div>
-					</div>
-					<!-- ++==++ -->
-				</div>
-					
-			</div>
-			
-			<!-- ++==++ -->
-			<!-- Подменю -->
-			<div class="main-nav__under-level">
-				<div class="under-level__children" data-nav-under-level="level--1">
-					<div class="scrollable">
-						<ul class="under-level__ul">
-							<li class="under-level__list">
-								<div class="under-level__product trigger-list" data-submenu="1">Дайвинг</div>
-								<ul class="hidden-block">
-									<li>
-										<a class="under-level__link" href="#">Маски</a>
-									</li>
-									<li>
-										<a class="under-level__link" href="#">Моноласты</a>
-									</li>
-									<li>
-										<a class="under-level__link" href="#">Носки неопреновые</a>
-									</li>
-									<li>
-										<a class="under-level__link" href="#">Очки для плавания</a>
-									</li>
-									<li>
-										<a class="under-level__link" href="#">Маски</a>
-									</li>
-									<li>
-										<a class="under-level__link" href="#">Моноласты</a>
-									</li>
-									<li>
-										<a class="under-level__link" href="#">Носки неопреновые</a>
-									</li>
-									<li>
-										<a class="under-level__link" href="#">Очки для плавания</a>
-									</li>
-									<li>
-										<a class="under-level__link" href="#">Маски</a>
-									</li>
-									<li>
-										<a class="under-level__link" href="#">Моноласты</a>
-									</li>
-									<li>
-										<a class="under-level__link" href="#">Носки неопреновые</a>
-									</li>
-									<li>
-										<a class="under-level__link" href="#">Очки для плавания</a>
-									</li>
-									<li>
-										<a class="under-level__link" href="#">Маски</a>
-									</li>
-									<li>
-										<a class="under-level__link" href="#">Моноласты</a>
-									</li>
-									<li>
-										<a class="under-level__link" href="#">Носки неопреновые</a>
-									</li>
-									<li>
-										<a class="under-level__link" href="#">Очки для плавания</a>
-									</li>
-								</ul>
-							</li>
-							<li class="under-level__list">
-								<div class="under-level__product trigger-list" data-submenu="2">Фридайвинг и<br> подводная охота</div>
-								<ul class="hidden-block">
-									<li>
-										<a class="under-level__link" href="#">Маски</a>
-									</li>
-									<li>
-										<a class="under-level__link" href="#">Моноласты</a>
-									</li>
-									<li>
-										<a class="under-level__link" href="#">Носки неопреновые</a>
-									</li>
-									<li>
-										<a class="under-level__link" href="#">Очки для плавания</a>
-									</li>
-								</ul>
-							</li>
-							<li class="under-level__list">
-								<div class="under-level__product trigger-list" data-submenu="3">Плавнание и<br> отдых на воде</div>
-								<ul class="hidden-block">
-									<li>
-										<a class="under-level__link" href="#">Маски</a>
-									</li>
-									<li>
-										<a class="under-level__link" href="#">Моноласты</a>
-									</li>
-									<li>
-										<a class="under-level__link" href="#">Носки неопреновые</a>
-									</li>
-									<li>
-										<a class="under-level__link" href="#">Очки для плавания</a>
-									</li>
-								</ul>
-							</li>
-							<li class="under-level__list">
-								<div class="under-level__product trigger-list"  data-submenu="4">Единоборства</div>
-								<ul class="hidden-block">
-									<li>
-										<a class="under-level__link" href="#">Маски</a>
-									</li>
-									<li>
-										<a class="under-level__link" href="#">Моноласты</a>
-									</li>
-									<li>
-										<a class="under-level__link" href="#">Носки неопреновые</a>
-									</li>
-									<li>
-										<a class="under-level__link" href="#">Очки для плавания</a>
-									</li>
-								</ul>
-							</li>
-							<li class="under-level__list">
-								<div class="under-level__product trigger-list"  data-submenu="5">Фитнес</div>
-								<ul class="hidden-block">
-									<li>
-										<a class="under-level__link" href="#">Маски</a>
-									</li>
-									<li>
-										<a class="under-level__link" href="#">Моноласты</a>
-									</li>
-									<li>
-										<a class="under-level__link" href="#">Носки неопреновые</a>
-									</li>
-									<li>
-										<a class="under-level__link" href="#">Очки для плавания</a>
-									</li>
-								</ul>
-							</li>
-						</ul>
-						<ul class="under-level__ul--link">
-							<li>
-								<a href="#">Спецпредложения</a>
-							</li>
-							<li>
-								<a href="#">Распродажа</a>
-							</li>
-						</ul>
-					</div>
-				</div>
-				<div class="under-level__children" data-nav-under-level="level--2">
-					<div class="scrollable">
-						<ul class="under-level__ul">
-							<li class="under-level__list">
-								<div class="under-level__product trigger-list">Дайвинг</div>
-								<ul class="hidden-block">
-									<li>
-										<a class="under-level__link" href="#">Маски</a>
-									</li>
-									<li>
-										<a class="under-level__link" href="#">Моноласты</a>
-									</li>
-									<li>
-										<a class="under-level__link" href="#">Носки неопреновые</a>
-									</li>
-									<li>
-										<a class="under-level__link" href="#">Очки для плавания</a>
-									</li>
-								</ul>
-							</li>
-							<li class="under-level__list">
-								<div class="under-level__product trigger-list">Фридайвинг и<br> подводная охота</div>
-								<ul class="hidden-block">
-									<li>
-										<a class="under-level__link" href="#">Маски</a>
-									</li>
-									<li>
-										<a class="under-level__link" href="#">Моноласты</a>
-									</li>
-									<li>
-										<a class="under-level__link" href="#">Носки неопреновые</a>
-									</li>
-									<li>
-										<a class="under-level__link" href="#">Очки для плавания</a>
-									</li>
-								</ul>
-							</li>
-							<li class="under-level__list">
-								<div class="under-level__product trigger-list">Плавнание и<br> отдых на воде</div>
-								<ul class="hidden-block">
-									<li>
-										<a class="under-level__link" href="#">Маски</a>
-									</li>
-									<li>
-										<a class="under-level__link" href="#">Моноласты</a>
-									</li>
-									<li>
-										<a class="under-level__link" href="#">Носки неопреновые</a>
-									</li>
-									<li>
-										<a class="under-level__link" href="#">Очки для плавания</a>
-									</li>
-								</ul>
-							</li>
-							<li class="under-level__list">
-								<div class="under-level__product trigger-list">Дайвинг</div>
-								<ul class="hidden-block">
-									<li>
-										<a class="under-level__link" href="#">Маски</a>
-									</li>
-									<li>
-										<a class="under-level__link" href="#">Моноласты</a>
-									</li>
-									<li>
-										<a class="under-level__link" href="#">Носки неопреновые</a>
-									</li>
-									<li>
-										<a class="under-level__link" href="#">Очки для плавания</a>
-									</li>
-								</ul>
-							</li>
-						</ul>
-					</div>
-				</div>
-				<div class="under-level__children" data-nav-under-level="level--3">
-					<div class="scrollable">
-						<ul class="under-level__ul">
-							<li class="under-level__list">
-								<div class="under-level__product trigger-list">Дайвинг</div>
-								<ul class="hidden-block">
-									<li>
-										<a class="under-level__link" href="#">Маски</a>
-									</li>
-									<li>
-										<a class="under-level__link" href="#">Моноласты</a>
-									</li>
-									<li>
-										<a class="under-level__link" href="#">Носки неопреновые</a>
-									</li>
-									<li>
-										<a class="under-level__link" href="#">Очки для плавания</a>
-									</li>
-								</ul>
-							</li>
-							<li class="under-level__list">
-								<div class="under-level__product trigger-list">Фридайвинг и<br> подводная охота</div>
-								<ul class="hidden-block">
-									<li>
-										<a class="under-level__link" href="#">Маски</a>
-									</li>
-									<li>
-										<a class="under-level__link" href="#">Моноласты</a>
-									</li>
-									<li>
-										<a class="under-level__link" href="#">Носки неопреновые</a>
-									</li>
-									<li>
-										<a class="under-level__link" href="#">Очки для плавания</a>
-									</li>
-								</ul>
-							</li>
-							<li class="under-level__list">
-								<div class="under-level__product trigger-list">Плавнание и<br> отдых на воде</div>
-								<ul class="hidden-block">
-									<li>
-										<a class="under-level__link" href="#">Маски</a>
-									</li>
-									<li>
-										<a class="under-level__link" href="#">Моноласты</a>
-									</li>
-									<li>
-										<a class="under-level__link" href="#">Носки неопреновые</a>
-									</li>
-									<li>
-										<a class="under-level__link" href="#">Очки для плавания</a>
-									</li>
-								</ul>
-							</li>
-							<li class="under-level__list">
-								<div class="under-level__product trigger-list">Дайвинг</div>
-								<ul class="hidden-block">
-									<li>
-										<a class="under-level__link" href="#">Маски</a>
-									</li>
-									<li>
-										<a class="under-level__link" href="#">Моноласты</a>
-									</li>
-									<li>
-										<a class="under-level__link" href="#">Носки неопреновые</a>
-									</li>
-									<li>
-										<a class="under-level__link" href="#">Очки для плавания</a>
-									</li>
-								</ul>
-							</li>
-						</ul>
-					</div>
-				</div>
-				<div class="under-level__children" data-nav-under-level="level--4">
-					<div class="scrollable">
-						<ul class="under-level__ul">
-							<li class="under-level__list">
-								<div class="under-level__product trigger-list">Дайвинг</div>
-								<ul class="hidden-block">
-									<li>
-										<a class="under-level__link" href="#">Маски</a>
-									</li>
-									<li>
-										<a class="under-level__link" href="#">Моноласты</a>
-									</li>
-									<li>
-										<a class="under-level__link" href="#">Носки неопреновые</a>
-									</li>
-									<li>
-										<a class="under-level__link" href="#">Очки для плавания</a>
-									</li>
-								</ul>
-							</li>
-							<li class="under-level__list">
-								<div class="under-level__product trigger-list">Фридайвинг и<br> подводная охота</div>
-								<ul class="hidden-block">
-									<li>
-										<a class="under-level__link" href="#">Маски</a>
-									</li>
-									<li>
-										<a class="under-level__link" href="#">Моноласты</a>
-									</li>
-									<li>
-										<a class="under-level__link" href="#">Носки неопреновые</a>
-									</li>
-									<li>
-										<a class="under-level__link" href="#">Очки для плавания</a>
-									</li>
-								</ul>
-							</li>
-							<li class="under-level__list">
-								<div class="under-level__product trigger-list">Плавнание и<br> отдых на воде</div>
-								<ul class="hidden-block">
-									<li>
-										<a class="under-level__link" href="#">Маски</a>
-									</li>
-									<li>
-										<a class="under-level__link" href="#">Моноласты</a>
-									</li>
-									<li>
-										<a class="under-level__link" href="#">Носки неопреновые</a>
-									</li>
-									<li>
-										<a class="under-level__link" href="#">Очки для плавания</a>
-									</li>
-								</ul>
-							</li>
-							<li class="under-level__list">
-								<div class="under-level__product trigger-list">Дайвинг</div>
-								<ul class="hidden-block">
-									<li>
-										<a class="under-level__link" href="#">Маски</a>
-									</li>
-									<li>
-										<a class="under-level__link" href="#">Моноласты</a>
-									</li>
-									<li>
-										<a class="under-level__link" href="#">Носки неопреновые</a>
-									</li>
-									<li>
-										<a class="under-level__link" href="#">Очки для плавания</a>
-									</li>
-								</ul>
-							</li>
-						</ul>
-					</div>
-				</div>
-				<div class="under-level__children" data-nav-under-level="level--5">
-					<div class="scrollable">
-						<ul class="under-level__ul">
-							<li class="under-level__list">
-								<div class="under-level__product trigger-list">Дайвинг</div>
-								<ul class="hidden-block">
-									<li>
-										<a class="under-level__link" href="#">Маски</a>
-									</li>
-									<li>
-										<a class="under-level__link" href="#">Моноласты</a>
-									</li>
-									<li>
-										<a class="under-level__link" href="#">Носки неопреновые</a>
-									</li>
-									<li>
-										<a class="under-level__link" href="#">Очки для плавания</a>
-									</li>
-								</ul>
-							</li>
-							<li class="under-level__list">
-								<div class="under-level__product trigger-list">Фридайвинг и<br> подводная охота</div>
-								<ul class="hidden-block">
-									<li>
-										<a class="under-level__link" href="#">Маски</a>
-									</li>
-									<li>
-										<a class="under-level__link" href="#">Моноласты</a>
-									</li>
-									<li>
-										<a class="under-level__link" href="#">Носки неопреновые</a>
-									</li>
-									<li>
-										<a class="under-level__link" href="#">Очки для плавания</a>
-									</li>
-								</ul>
-							</li>
-							<li class="under-level__list">
-								<div class="under-level__product trigger-list">Плавнание и<br> отдых на воде</div>
-								<ul class="hidden-block">
-									<li>
-										<a class="under-level__link" href="#">Маски</a>
-									</li>
-									<li>
-										<a class="under-level__link" href="#">Моноласты</a>
-									</li>
-									<li>
-										<a class="under-level__link" href="#">Носки неопреновые</a>
-									</li>
-									<li>
-										<a class="under-level__link" href="#">Очки для плавания</a>
-									</li>
-								</ul>
-							</li>
-							<li class="under-level__list">
-								<div class="under-level__product trigger-list">Дайвинг</div>
-								<ul class="hidden-block">
-									<li>
-										<a class="under-level__link" href="#">Маски</a>
-									</li>
-									<li>
-										<a class="under-level__link" href="#">Моноласты</a>
-									</li>
-									<li>
-										<a class="under-level__link" href="#">Носки неопреновые</a>
-									</li>
-									<li>
-										<a class="under-level__link" href="#">Очки для плавания</a>
-									</li>
-								</ul>
-							</li>
-						</ul>
+					<div class="phone">
+						<a href="tel:88005555505">8-800-555-55-05</a>
 					</div>
 				</div>
 			</div>
 			<!-- ++==++ -->
-			
+
 			<!-- The head of site, not changed?! -->
 			<header class="head-site">
+				
 				<div class="wrapper-block">
-					<div class="row">
-						<div class="head-site__phone">
-							<a href="tel:+79650070780" class="head-site__phone--num">+7 (965) 007-07-80</a>
+					<div class="logo">
+						<img src="/" alt="пятёрочка">
+					</div>
+					<div class="info-menu">
+						<ul class="info-menu__ul">
+							<li class="info-menu__list">
+								<a href="#" class="info-menu__link">Покупателям</a>
+							</li>
+							<li class="info-menu__list">
+								<a href="#" class="info-menu__link">Партнерам</a>
+							</li>
+							<li class="info-menu__list">
+								<a href="#" class="info-menu__link">Карьера</a>
+							</li>
+						</ul>
+					</div>
+					<div class="user-block">
+						<div class="user-block__search">
+							<a href="#">123</a>
 						</div>
-						<div class="head-site__usefull-link">
-							<div class="head-site__personal">
-								<div class="head-site__personal__b">
-									<a href="/" class="head-site__personal__link">вход</a>
-								</div>
-								<div class="head-site__personal__b">
-									<a href="/" class="head-site__personal__link">регистарция</a>
-								</div>
-							</div>
-				
-							<div class="head-site__product-link">
-								<!-- По data атрибуту вызываем необходимый popup -->
-								<!-- По классу g-popup следим как за кнопкой popup -->
-								<div class="head-site__personal-link g-popup" data-g-popup="search">
-									<span class="ti-search"></span>
-								</div>
-								<!-- Если не пусто, то добавляется класс no-empty -->
-								<div class="head-site__personal-link hover-link no-empty g-popup" data-g-popup="product-comparison">
-									<div class="head-site--hidden-full">
-										<span class="ti-menu-alt"></span>
-										<span class="hidden-text_head-site">
-											Таблица <br>сравнения
-										</span>
-									</div>
-				
-									<div class="head-site__personal-link__ball">
-										1
-									</div>
-								</div>
-								<!-- ++==++ -->
-								<!-- Если не пусто, то добавляется класс no-empty -->
-								<div class="head-site__personal-link hover-link g-popup" data-g-popup="product-basket">
-									<div class="head-site--hidden-full">
-										<span class="ti-shopping-cart"></span>
-										<span class="hidden-text_head-site">
-											Корзина<br>пуста
-										</span>
-									</div>
-									<div class="head-site__personal-link__ball">2</div>
-								</div>
-								<!-- ++==++ -->
-							</div>
+						<div class="user-block__enter">
+							<a href="#" class="btn-enter">Войти</a>
 						</div>
 					</div>
 				</div>
 			</header>
+			<div class="action-block">
+				<div class="wrapper-block">
+					<!-- Слайдер акций -->
+					<div class="action-slider">
+						<ul>
+							<li>
+								<!-- Выводи изображения слайдера -->
+								<img src="/" alt="Окорочка куриные охлажденные">
+								<!-- ++==++ -->
 
+								<div class="action-slider__validity">
+									c 30 июня по 6 июля 2015 года
+								</div>
+								<div class="action-slider__name">
+									Окорочка<br>
+									куриные<br>
+									охлажденные
+								</div>
+								<div class="action-slider__packing">
+									1 кг
+								</div>
+								<!-- Вывод старой и новой цены -->
+								<div class="action-slider__discount">
+									<div class="action-slider__discount--new">
+										<span class="action-slider__discount--rub">129</span>
+										<span class="action-slider__discount--peny">00</span>
+									</div>
+									<div class="action-slider__discount--old">
+										<span class="action-slider__discount--rub">189</span>
+										<span class="action-slider__discount--peny">50</span>
+									</div>
+									<div class="action-slider__discount--percent">-<span class="action-slider__discount--num">20</span>%</div>
+								</div>
+								<!-- ++==++ -->
+							</li>
+							<li>2</li>
+							<li>3</li>
+						</ul>
+					</div>
+					<div class="follow-us">
+						<!--noindex-->
+							<a href="#" class="follow-us__link" rel="nofollow" target="_blank">vk</a>
+							<a href="#" class="follow-us__link" rel="nofollow" target="_blank">ok</a>
+							<a href="#" class="follow-us__link" rel="nofollow" target="_blank">mail</a>
+						<!--/noindex-->
+					</div>
+				</div>
+			</div>
 			<!-- Основной контент -->
 			<div class="content">
 
-				<div class="clearfix wrapper-block">
-					<section>
-						<h1>Выбери свою активность</h1>
+				<!-- Рецепты -->
+				<div class="recipes">
+					<div class="wrapper-block">
+						<section>
+							<h2>Наши рецепты</h2>
 
-						<div class="product-slider row">
-							<div class="product-slider__diving g-hover-slider">
-								<div class="diving__block">
-									<ul class="bxslider1">
-										<li><img src="img/scuba.jpg" height="505" width="750" alt="скуба"></li>
-										<li><img src="img/scuba.jpg" height="505" width="750" alt="скуба"></li>
-										<li><img src="img/scuba.jpg" height="505" width="750" alt="скуба"></li>
-									</ul>
-									<div class="bx-pager bx-pager-hover1">
-										<a data-slide-index="0" data-submenu="1" class="bx-pager__link" >дайвинг</a>
-										<a data-slide-index="1" data-submenu="2" class="bx-pager__link" >фридайвинг<br> и подводная охота</a>
-										<a data-slide-index="2" data-submenu="3" class="bx-pager__link" >плавание<br> и отдых на воде</a>
+							<!-- Вывод элементов рецептов -->
+							<div class="recipes-container">
+								<!-- Один рецепт -->
+								<div class="recipes-container__item">
+									<div class="recipes-container__img">
+										<img src="/" alt="alt">
+										<div class="recipes-container__price">
+											<span class="recipes-container__price--rub">160</span> <span class="recipes-container__price--peny">00</span>
+										</div>
 									</div>
+									<div class="recipes-container__content">
+										<div class="recipes-container__tags">
+											вегетарианский, простой
+										</div>
+										<div class="recipes-container__name">
+											<h3>Блинчики с клубникой</h3>
+										</div>
+										<div class="recipes-container__time">
+											<span class="recipes-container__time--hours">0</span>:<span class="recipes-container__time--min">40</span>
+										</div>
+									</div>
+									<div class="recipes-container__get-product"><a href="#">Подобрать продукты</a></div>
 								</div>
+								<!-- ++==++ -->
 							</div>
-							<div class="product-slider__earth g-hover-slider">
-								<div class="diving__block">
-									<ul class="bxslider2">
-										<li><img src="img/scuba.jpg" height="505" width="750" alt="скуба"></li>
-										<li><img src="img/scuba.jpg" height="505" width="750" alt="скуба"></li>
-									</ul>
-									<div class="bx-pager bx-pager-hover2">
-										<a data-slide-index="0" data-submenu="4" class="bx-pager__link" >единоборства</a>
-										<a data-slide-index="1" data-submenu="5" class="bx-pager__link" >фитнес</a>
-									</div>
-								</div>
+							<!-- ++==++ -->
+
+						</section>
+					</div>
+				</div>
+				<!-- ++==++ -->
+
+				<div class="trademarks">
+					<div class="wrapper-block">
+						<div class="trademarks__container">
+							<!-- Пустые элементы задаются empty,
+							не пустые full -->
+							<div class="trademarks__container--empty">
+
 							</div>
-						</div>
-					</section>
-					
-					<!-- Спецпредложения -->
-					<article class="sale">
+							<div class="trademarks__container--empty">
 
-					</article>
-					<!-- Распродажа -->
-					<article class="sale">
-						<h2>Распродажа</h2>
-						<!-- Контейнер спец предложений -->
-						<div class="sale__container row">
-							<div class="sale__container--separate">
-								<!-- Одно конкретное спец предложение -->
-								<!-- Информационная часть в левой стороне -->
-								<div class="sale__container__block main-sale">
-									<!-- Часть изображения -->
-									<div class="sale__img">
-										<a class="sale__img__link" href="#">
-											<div class="sale__img--cell">
-												<img src="img/sale-img--1.jpg" height="140" width="155" alt="специальное предложение 1">
-											</div>
-										</a>
-									</div>
-									<!-- ++==++ -->
-									<!-- Информационная часть -->
-									<div class="sale__info">
-										<div class="sale__info__head">
-											Подводная фотовспышка PX&ndash;21&nbsp;Intova
-										</div>
-										<div class="sale__info__price">
-											<div class="sale__info__price--new">
-												<span class="sale__info__price__num">7&nbsp;530</span>
-												<span class="sale__info__price--currency">р.</span>
-											</div>
-											<div class="sale__info__price--old">
-												<span class="sale__info__price__num">8&nbsp;000</span>
-												<span class="sale__info__price--currency">р.</span>
-											</div>
-											<div class="sale__more-info">
-												<div class="sale__more-info__btn-menu">
-													<span class="ti-menu-alt"></span>
-												</div>
-												<div class="sale__more-info__rate">
-													<span class="sale__more-info--rating-mark">4,6</span>
-													<span class="sale__more-info--rating-star ti-star"></span>
-												</div>
-											</div>
-										</div>
-									</div>
-									<!-- ++==++ -->
-									<!-- Скидка в процентах -->
-									<div class="sale__discount">
-										-<span class="sale__discount__num">10</span>%
-									</div>
-									<!-- ++==++ -->
-								</div>
 							</div>
-							<div class="sale__container--separate">
-								<!-- Одно конкретное спец предложение -->
-								<!-- Информационная часть в левой стороне -->
-								<div class="sale__container__block right-sale">
-									<!-- Информационная часть -->
-									<div class="sale__info">
-										<div class="sale__info__head">
-											Подводная фотовспышка PX&ndash;21&nbsp;Intova
-										</div>
-										<div class="sale__info__price">
-											<div class="sale__info__price--new">
-												<span class="sale__info__price__num">7&nbsp;530</span>
-												<span class="sale__info__price--currency">р.</span>
-											</div>
-											<div class="sale__info__price--old">
-												<span class="sale__info__price__num">8&nbsp;000</span>
-												<span class="sale__info__price--currency">р.</span>
-											</div>
-											<div class="sale__more-info">
-												<div class="sale__more-info__btn-menu">
-													<span class="ti-menu-alt"></span>
-												</div>
-												<div class="sale__more-info__rate">
-													<span class="sale__more-info--rating-mark">4,6</span>
-													<span class="sale__more-info--rating-star ti-star"></span>
-												</div>
-											</div>
-										</div>
-									</div>
-									<!-- ++==++ -->
-									<!-- Часть изображения -->
-									<div class="sale__img">
-										<a class="sale__img__link" href="#">
-											<div class="sale__img--cell">
-												<img src="img/sale-img--1.jpg" height="140" width="155" alt="специальное предложение 1">
-											</div>
-										</a>
-									</div>
-									<!-- ++==++ -->
-									<!-- Скидка в процентах -->
-									<div class="sale__discount">
-										-<span class="sale__discount__num">10</span>%
-									</div>
-									<!-- ++==++ -->
-								</div>
+							<div class="trademarks__container--empty">
 
-								<!-- Одно конкретное спец предложение -->
-								<!-- Информационная часть в левой стороне -->
-								<div class="sale__container__block left-sale">
-									<!-- Информационная часть -->
-									<div class="sale__info">
-										<div class="sale__info__head">
-											Подводная фотовспышка PX&ndash;21&nbsp;Intova
-										</div>
-										<div class="sale__info__price">
-											<div class="sale__info__price--new">
-												<span class="sale__info__price__num">7&nbsp;530</span>
-												<span class="sale__info__price--currency">р.</span>
-											</div>
-											<div class="sale__info__price--old">
-												<span class="sale__info__price__num">8&nbsp;000</span>
-												<span class="sale__info__price--currency">р.</span>
-											</div>
-											<div class="sale__more-info">
-												<div class="sale__more-info__btn-menu">
-													<span class="ti-menu-alt"></span>
-												</div>
-												<div class="sale__more-info__rate">
-													<span class="sale__more-info--rating-mark">4,6</span>
-													<span class="sale__more-info--rating-star ti-star"></span>
-												</div>
-											</div>
-										</div>
-									</div>
-									<!-- ++==++ -->
-									<!-- Часть изображения -->
-									<div class="sale__img">
-										<a class="sale__img__link" href="#">
-											<div class="sale__img--cell">
-												<img src="img/sale-img--1.jpg" height="140" width="155" alt="специальное предложение 1">
-											</div>
-										</a>
-									</div>
-									<!-- ++==++ -->
-									<!-- Скидка в процентах -->
-									<div class="sale__discount">
-										-<span class="sale__discount__num">10</span>%
-									</div>
-									<!-- ++==++ -->
-								</div>
 							</div>
+							<div class="trademarks__container--empty">
 
-							<div class="sale__container--separate">
-								<!-- Одно конкретное спец предложение -->
-								<!-- Информационная часть в левой стороне -->
-								<div class="sale__container__block right-sale">
-									<!-- Информационная часть -->
-									<div class="sale__info">
-										<div class="sale__info__head">
-											Подводная фотовспышка PX&ndash;21&nbsp;Intova
-										</div>
-										<div class="sale__info__price">
-											<div class="sale__info__price--new">
-												<span class="sale__info__price__num">7&nbsp;530</span>
-												<span class="sale__info__price--currency">р.</span>
-											</div>
-											<div class="sale__info__price--old">
-												<span class="sale__info__price__num">8&nbsp;000</span>
-												<span class="sale__info__price--currency">р.</span>
-											</div>
-											<div class="sale__more-info">
-												<div class="sale__more-info__btn-menu">
-													<span class="ti-menu-alt"></span>
-												</div>
-												<div class="sale__more-info__rate">
-													<span class="sale__more-info--rating-mark">4,6</span>
-													<span class="sale__more-info--rating-star ti-star"></span>
-												</div>
-											</div>
-										</div>
-									</div>
-									<!-- ++==++ -->
-									<!-- Часть изображения -->
-									<div class="sale__img">
-										<a class="sale__img__link" href="#">
-											<div class="sale__img--cell">
-												<img src="img/sale-img--1.jpg" height="140" width="155" alt="специальное предложение 1">
-											</div>
-										</a>
-									</div>
-									<!-- ++==++ -->
-									<!-- Скидка в процентах -->
-									<div class="sale__discount">
-										-<span class="sale__discount__num">10</span>%
-									</div>
-									<!-- ++==++ -->
-								</div>
-
-								<!-- Одно конкретное спец предложение -->
-								<!-- Информационная часть в левой стороне -->
-								<div class="sale__container__block left-sale">
-									<!-- Информационная часть -->
-									<div class="sale__info">
-										<div class="sale__info__head">
-											Подводная фотовспышка PX&ndash;21&nbsp;Intova
-										</div>
-										<div class="sale__info__price">
-											<div class="sale__info__price--new">
-												<span class="sale__info__price__num">7&nbsp;530</span>
-												<span class="sale__info__price--currency">р.</span>
-											</div>
-											<div class="sale__info__price--old">
-												<span class="sale__info__price__num">8&nbsp;000</span>
-												<span class="sale__info__price--currency">р.</span>
-											</div>
-											<div class="sale__more-info">
-												<div class="sale__more-info__btn-menu">
-													<span class="ti-menu-alt"></span>
-												</div>
-												<div class="sale__more-info__rate">
-													<span class="sale__more-info--rating-mark">4,6</span>
-													<span class="sale__more-info--rating-star ti-star"></span>
-												</div>
-											</div>
-										</div>
-									</div>
-									<!-- ++==++ -->
-									<!-- Часть изображения -->
-									<div class="sale__img">
-										<a class="sale__img__link" href="#">
-											<div class="sale__img--cell">
-												<img src="img/sale-img--1.jpg" height="140" width="155" alt="специальное предложение 1">
-											</div>
-										</a>
-									</div>
-									<!-- ++==++ -->
-									<!-- Скидка в процентах -->
-									<div class="sale__discount">
-										-<span class="sale__discount__num">10</span>%
-									</div>
-									<!-- ++==++ -->
-								</div>
 							</div>
-							
+							<div class="trademarks__container--empty">
 
-						</div>
-						<!-- ++==++ -->
-					</article>
-					<!-- ++==++ -->
-
-					<!-- Дополнительные ссылки на главной -->
-					<div class="more-info row">
-						<div class="more-info__address">
-							<article>
-								<h3>Наш адрес</h3>
-
-								<div class="more-info__address__content">
-									Санкт-Петербург, 
-									Северный&nbsp;проспект,&nbsp;дом&nbsp;7,
-									2&nbsp;этаж,&nbsp;секция&nbsp;214
-									<a href="#" class="watch-map g-popup" data-g-popup="link-map">посмотреть на карте</a>
-								</div>
-							</article>
-						</div>
-
-						<div class="more-info__advantages">
-							<article>
-								<h3>Интернет-магазин товаров<br> для водных видов спорта Diveplanet</h3>
-								<div class="more-info__advantages__content">
-									<section class="more-info__advantages__block">
-										<h4>Цены ниже чем у конкурентов</h4>
-										<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus natus facilis, assumenda laudantium facere vitae voluptatum aperiam rerum impedit et tempora at ea recusandae excepturi sequi eius doloribus dolorum! Modi.</p>
-										<div class="icon-more-info__advantages--1 more-info__ico"></div>
-									</section>
-									<section class="more-info__advantages__block">
-										<h4>Цены ниже чем у конкурентов</h4>
-										<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus natus facilis, assumenda laudantium facere vitae voluptatum aperiam rerum impedit et tempora at ea recusandae excepturi sequi eius doloribus dolorum! Modi.</p>
-										<div class="icon-more-info__advantages--2 more-info__ico"></div>
-									</section>
-									<section class="more-info__advantages__block">
-										<h4>Цены ниже чем у конкурентов</h4>
-										<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus natus facilis, assumenda laudantium facere vitae voluptatum aperiam rerum impedit et tempora at ea recusandae excepturi sequi eius doloribus dolorum! Modi.</p>
-										<div class="icon-more-info__advantages--3 more-info__ico"></div>
-									</section>
-								</div>
-							</article>
+							</div>
+							<div class="trademarks__container--full">
+								+<span class="trademarks__container--num">456</span>
+							</div>
 						</div>
 					</div>
-					<!-- ++==++ -->
 				</div>
+				<!-- ++==++ -->
 
+				<!-- Количество магазинов -->
+				<div class="count-store">
+					<div class="wrapper-block">
+						<div class="count-store__baloon">
+							<img src="logo" alt="пятёрочка">
+						</div>
+						<div class="count-store__num">
+							5 100
+						</div>
+						<div class="count-store__name">
+							магазинов
+						</div>
+					</div>
+				</div>
+				<!-- ++==++ -->
+
+				<div class="loyality">
+					<div class="wrapper-block">
+						<h2>Платите меньше</h2>
+						<div class="loyality__description">
+							Станьте частью программы лояльности: получите карту Пятерочки в любом магазине сети и покупайте дешевле.
+						</div>
+						<div class="loyality__btn">
+							<a href="#">Зарегистрировать карту</a>
+						</div>
+						<div class="loyality__cart">
+							<img src="/" alt="Карта пятёрочки">
+						</div>
+					</div>
+				</div>
 			</div>
 
 		</div>
 
 
 		<footer class="footer-site">
+			
+
 			<div class="wrapper-block">
-				<div class="footer-site__content row">
-					<div class="info">
-						<span class="span-block name">&copy; Diveplanet,2015</span>
-						<span class="span-block">Санкт-Петербург,</span>
-						<span class="span-block">Северный проспект, дом 7,</span>
-						<span class="span-block">2 этаж, секция 214</span>
-						<div class="phone">
-							<a href="tel:+79650070780">+7 (965) 007-07-80</a>
+				<div class="info-menu row">
+					<div class="info-menu__block">
+						<div class="info-menu__head">
+							Покупателям
 						</div>
-					</div>
-					<div class="menu">
-						<ul>
+						<ul class="info-menu__submenu">
 							<li>
-								<a href="#">О магазине</a>
+								<a href="#">О Компании</a>
+							</li>
+							<li>
+								<a href="#">Акции</a>
+							</li>
+							<li>
+								<a href="#">Магазины</a>
 							</li>
 							<li>
 								<a href="#">Новости</a>
 							</li>
 							<li>
-								<a href="#">Контакты</a>
+								<a href="#">Товары</a>
+							</li>
+							<li>
+								<a href="#">Рецепты</a>
 							</li>
 						</ul>
 					</div>
-			
-					<div class="useful-link">
-						<ul>
+					<div class="info-menu__block">
+						<div class="info-menu__head">
+							Партнерам
+						</div>
+						<ul class="info-menu__submenu">
 							<li>
-								<!--noindex--><a href="#" >Facebook</a><!--/noindex-->
+								<a href="#">Поставщики</a>
 							</li>
 							<li>
-								<!--noindex--><a href="#" >ВКонтакте</a><!--/noindex-->
+								<a href="#">Строительство и&nbsp;эксплуатация</a>
 							</li>
 							<li>
-								<!--noindex--><a href="#" >Instagram</a><!--/noindex-->
+								<a href="#">Аутстаффинг</a>
+							</li>
+							<li>
+								<a href="#">Франчайзинг</a>
+							</li>
+							<li>
+								<a href="#">Субаренда</a>
 							</li>
 						</ul>
-						<div class="useful-link__mail">
-							<a href="mailto:msz11@yandex.ru">msz11@yandex.ru</a>
-						</div>
 					</div>
-			
-					<div class="pay-link">
-						<div>
-							<a href="#">Возврат</a> <a href="#">Оферта</a>
+					<div class="info-menu__block">
+						<div class="info-menu__head">
+							Карьера
 						</div>
-						<div>
-							<a href="#">Доставка и оплата</a>
+						<ul class="info-menu__submenu">
+							<li>
+								<a href="#">Работа для студентов</a>
+							</li>
+							<li>
+								<a href="#">Истории успеха</a>
+							</li>
+							<li>
+								<a href="#">Работа в магазине</a>
+							</li>
+							<li>
+								<a href="#">Работа в офисе</a>
+							</li>
+							<li>
+								<a href="#">Мероприятия</a>
+							</li>
+							<li>
+								<a href="#">HR обучение</a>
+							</li>
+							<li>
+								<a href="#">Работа в логистике</a>
+							</li>
+						</ul>
+					</div>
+					<div class="info-menu__block">
+						<div class="info-menu__head">
+							Обратная связь
 						</div>
-						<div class="pay-link__card">
-							<a href="#"><img src="/" alt="visa"></a>
-							<a href="#"><img src="/" alt="mastercard"></a>
-							<a href="#"><img src="/" alt="paypal"></a>
-							<a href="#"><img src="/" alt="link"></a>
+						<ul class="info-menu__submenu">
+							<li>
+								<a href="#">Напишите нам</a>
+							</li>
+							<li>
+								<a href="#">Закажите звонок</a>
+							</li>
+						</ul>
+					</div>
+					<div class="info-menu__contacts">
+						<div class="info-menu__contacts__logo">
+							<img src="/" alt="Пятёрочка">
+						</div>
+						<div class="info-menu__contacts__content">
+							<p>Головной офис:</p>
+							<p>Адрес: 109029, Москва, Средняя Калитниковская ул.,</p>
+							<p>д. 28, стр. 4. Телефон: <a href="tel:+74956628888">(495) 662-88-88</a></p>
 						</div>
 					</div>
 				</div>
@@ -1005,47 +384,6 @@
 			</script>
 		<![endif]-->
 		<script src="js/main.js"></script>
-		<script src="js/vendor/jquery.bxslider.min.js"></script>
-
-
-
-		<!-- Popup контейнеры -->
-		
-		<!-- Popup для сравнения товаров -->
-		<div class="popup-container" data-g-popup="product-comparison">
-			<div class="wrapper-block">
-				
-				Сравнение
-				
-			</div>
-		</div>
-
-
-		<!-- Popup для сравнения товаров -->
-		<div class="popup-container" data-g-popup="product-basket">
-			<div class="wrapper-block">
-				
-				Корзина
-				
-			</div>
-		</div>
-
-		<!-- Popup для поиска -->
-		<div class="popup-container" data-g-popup="search">
-			<div class="wrapper-block">
-				
-				Поиск
-				
-			</div>
-		</div>
-
-		<!-- Popup для Карты -->
-		<div class="popup-container all-width" data-g-popup="link-map">
-				
-			<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1996.5147951731701!2d30.338266951774486!3d59.97337166616935!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTnCsDU4JzI0LjEiTiAzMMKwMjAnMjUuNyJF!5e0!3m2!1sru!2sru!4v1453371896654" width="100%" height="100%" frameborder="0" style="border:0" allowfullscreen></iframe>
-		</div>
-
-		<!-- +++++++++===========++++++++++ -->
 
 	</body>
 </html>

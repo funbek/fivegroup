@@ -5,13 +5,13 @@ var gulp = require('gulp'),
     uglify = require('gulp-uglify'), //компилирует js
     sass = require('gulp-sass'), //компилятор sass
     sourcemaps = require('gulp-sourcemaps'), //map для sass
-    rigger = require('gulp-rigger'), 
+    rigger = require('gulp-rigger'),
     imagemin = require('gulp-imagemin'), //оптимизация изображений jpg
     pngquant = require('imagemin-pngquant'), //оптимизация изображений png
-    rimraf = require('gulp-rimraf'), 
+    rimraf = require('gulp-rimraf'),
     spritesmith = require('gulp.spritesmith'), //спрайты
     browserSync = require("browser-sync"),
-    autoprefixer = require('gulp-autoprefixer'), // добавляем префиксы 
+    autoprefixer = require('gulp-autoprefixer'), // добавляем префиксы
     useref = require('gulp-useref'), // забираем нужные файлы из bower_components
     reload = browserSync.reload
 
@@ -41,7 +41,7 @@ var path = {
         image: 'src/img/*.*',
         fonts: 'src/fonts/*.*'
     },
-    clean: 'build'
+    clean: 'build/img/Thumbs.db'
 };
 
 
@@ -100,8 +100,8 @@ gulp.task('style:build', function () {
     gulp.src(path.src.style) //Выберем наш main.scss
         .pipe(sourcemaps.init())
         .pipe(sass().on('error', sass.logError)) //Выдаем ошибки
-        .pipe(autoprefixer( { 
-            browsers: ["last 20 version", "> 1%", "ie 8", "ie 7"], cascade: false 
+        .pipe(autoprefixer( {
+            browsers: ["last 20 version", "> 1%", "ie 8", "ie 7"], cascade: false
         }))
         .pipe(sass({
             outputStyle: 'compressed'
@@ -114,8 +114,8 @@ gulp.task('style:build', function () {
 // собираем css
 gulp.task('styleVendor:build', function () {
     gulp.src(path.src.css) //Выберем наш main.scss
-        .pipe(autoprefixer( { 
-            browsers: ['> 1%', 'IE 7'], cascade: false 
+        .pipe(autoprefixer( {
+            browsers: ['> 1%', 'IE 7'], cascade: false
         }))
         .pipe(gulp.dest(path.build.css)) //И в build
 });
@@ -123,7 +123,7 @@ gulp.task('styleVendor:build', function () {
 // собираем картинки
 gulp.task('image:build', function () {
     gulp.src(path.src.image) //Выберем наши картинки
-        .pipe(imagemin({ 
+        .pipe(imagemin({
             progressive: true,
             svgoPlugins: [{removeViewBox: false}],
             use: [pngquant()]
@@ -141,7 +141,7 @@ gulp.task('fonts:build', function() {
 
 // Сборка спрайтов
 gulp.task('spritesmith:build', function() {
-    var spriteData = 
+    var spriteData =
         gulp.src('src/img/sprite/*.*') // путь, откуда берем картинки для спрайта
             .pipe(spritesmith({
                 imgName: 'sprite.png',
@@ -161,8 +161,8 @@ gulp.task('build', [
     'style:build',
     'styleVendor:build',
     'fonts:build',
-    'image:build',
-    'spritesmith:build'
+    'image:build'
+    // 'spritesmith:build'
 ]);
 
 // следим за изменениями файлов
@@ -188,4 +188,4 @@ gulp.task('watch', function(){
 
 
 // Задаем начальную команду gulp на выполнение тасков и слежение элементов
-gulp.task('default', ['build', 'watch', 'webserver'])
+gulp.task('default', ['clean','build', 'watch', 'webserver'])
