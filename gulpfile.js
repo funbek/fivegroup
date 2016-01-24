@@ -188,4 +188,4 @@ gulp.task('watch', function(){
 
 
 // Задаем начальную команду gulp на выполнение тасков и слежение элементов
-gulp.task('default', ['clean','build', 'watch', 'webserver'])
+gulp.task('default', ['build', 'watch', 'webserver'])

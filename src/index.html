@@ -6,77 +6,84 @@
 	<body>
 
 		<div class="wrapper">
-			<!-- Глваное меню сайта -->
-			//= template/g-menu.html
-			<div class="main-menu">
-				<div class="wrapper-block">
-					<div class="city">
-						<div class="city__current"><span class="city__current__location">1</span><span class="city__current--set">Омск</span></div>
-						<div class="city__list">
-							<ul>
-								<li class="city__list--get">Санкт-Петербург</li>
-								<li class="city__list--get">Москва</li>
-								<li class="city__list--get">Рязань</li>
-							</ul>
-						</div>
-					</div>
-					<div class="navigation">
-						<nav>
-							<ul class="navigation__ul">
-								<li class="navigation__list">
-									<a href="#" class="navigation__link">О компании</a>
-								</li>
-								<li class="navigation__list">
-									<a href="#" class="navigation__link">Акции</a>
-								</li>
-								<li class="navigation__list">
-									<a href="#" class="navigation__link">Магазины</a>
-								</li>
-								<li class="navigation__list">
-									<a href="#" class="navigation__link">Новости</a>
-								</li>
-								<li class="navigation__list">
-									<a href="#" class="navigation__link">Товары</a>
-								</li>
-								<li class="navigation__list">
-									<a href="#" class="navigation__link">Напишите нам</a>
-								</li>
-							</ul>
-						</nav>
-					</div>
-					<div class="phone">
-						<a href="tel:88005555505">8-800-555-55-05</a>
-					</div>
-				</div>
-			</div>
-			<!-- ++==++ -->
 
 			<!-- The head of site, not changed?! -->
 			<header class="head-site">
 				//= template/header.html
-				<div class="wrapper-block">
-					<div class="logo">
-						<img src="/" alt="пятёрочка">
-					</div>
-					<div class="info-menu">
-						<ul class="info-menu__ul">
-							<li class="info-menu__list">
-								<a href="#" class="info-menu__link">Покупателям</a>
-							</li>
-							<li class="info-menu__list">
-								<a href="#" class="info-menu__link">Партнерам</a>
-							</li>
-							<li class="info-menu__list">
-								<a href="#" class="info-menu__link">Карьера</a>
-							</li>
-						</ul>
-					</div>
-					<div class="user-block">
-						<div class="user-block__search">
-							<a href="#">123</a>
+				<!-- Глваное меню сайта -->
+				<div class="main-menu">
+					<div class="wrapper-block">
+						<div class="row">
+							<div class="city">
+								<div class="city__current trigger-button">
+									<span class="city__current__location fa fa-map-marker"></span><span class="city__current--set">Омск</span>
+								</div>
+								<div class="city__list hidden-block">
+									<ul>
+										<li class="city__list--get"><a href="#">Санкт-Петербург</a></li>
+										<li class="city__list--get"><a href="#">Москва</a></li>
+										<li class="city__list--get"><a href="#">Рязань</a></li>
+									</ul>
+								</div>
+							</div>
+							<div class="navigation">
+								<nav>
+									<ul class="navigation__ul">
+										<li class="navigation__list">
+											<a href="#" class="navigation__link">О компании</a>
+										</li>
+										<li class="navigation__list">
+											<a href="#" class="navigation__link">Акции</a>
+										</li>
+										<li class="navigation__list">
+											<a href="#" class="navigation__link">Магазины</a>
+										</li>
+										<li class="navigation__list">
+											<a href="#" class="navigation__link">Новости</a>
+										</li>
+										<li class="navigation__list">
+											<a href="#" class="navigation__link">Товары</a>
+										</li>
+										<li class="navigation__list">
+											<a href="#" class="navigation__link">Напишите нам</a>
+										</li>
+									</ul>
+								</nav>
+							</div>
+							<div class="phone">
+								<a href="tel:88005555505">8-800-555-55-05</a>
+							</div>
 						</div>
-						<div class="user-block__enter">
-							<a href="#" class="btn-enter">Войти</a>
+					</div>
+				</div>
+				<!-- ++==++ -->
+				<div class="info-menu-block">
+					<div class="wrapper-block">
+						<div class="logo">
+							<a href="/">
+								<img src="img/logo.png" srcset="img/logo@2.png 2x" alt="пятёрочка">
+							</a>
+						</div>
+						<div class="info-menu">
+							<ul class="info-menu__ul">
+								<li class="info-menu__list">
+									<a href="#" class="info-menu__link">Покупателям</a>
+								</li>
+								<li class="info-menu__list">
+									<a href="#" class="info-menu__link">Партнерам</a>
+								</li>
+								<li class="info-menu__list">
+									<a href="#" class="info-menu__link">Карьера</a>
+								</li>
+							</ul>
+						</div>
+						<div class="user-block">
+							<div class="user-block__search">
+								<a href="#" class="fa fa-search"></a>
+							</div>
+							<div class="user-block__enter">
+								<a href="#" class="btn-enter">Войти</a>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -86,17 +93,17 @@
 					<!-- Слайдер акций -->
 					<div class="action-slider">
 						<ul>
-							<li>
+							<li class="action-slider__item">
 								<!-- Выводи изображения слайдера -->
-								<img src="/" alt="Окорочка куриные охлажденные">
+								<img src="img/action-slider--chicken.png" class="action-slider__img" alt="Окорочка куриные охлажденные">
 								<!-- ++==++ -->
 
 								<div class="action-slider__validity">
 									c 30 июня по 6 июля 2015 года
 								</div>
 								<div class="action-slider__name">
-									Окорочка<br>
-									куриные<br>
+									Окорочка
+									куриные
 									охлажденные
 								</div>
 								<div class="action-slider__packing">
@@ -116,16 +123,23 @@
 								</div>
 								<!-- ++==++ -->
 							</li>
-							<li>2</li>
-							<li>3</li>
 						</ul>
 					</div>
-					<div class="follow-us">
-						<!--noindex-->
-							<a href="#" class="follow-us__link" rel="nofollow" target="_blank">vk</a>
-							<a href="#" class="follow-us__link" rel="nofollow" target="_blank">ok</a>
-							<a href="#" class="follow-us__link" rel="nofollow" target="_blank">mail</a>
-						<!--/noindex-->
+				</div>
+			</div>
+			<div class="follow-us">
+				<div class="wrapper-block">
+					<div class="row">
+						<div class="follow-us__block">
+							<!--noindex-->
+								<a href="#" class="follow-us__link fa fa-vk" rel="nofollow" target="_blank"></a>
+								<a href="#" class="follow-us__link fa fa-odnoklassniki" rel="nofollow" target="_blank"></a>
+								<a href="#" class="follow-us__link fa fa-at" rel="nofollow" target="_blank"></a>
+							<!--/noindex-->
+						</div>
+						<div class="follow-us__slider-pager">
+							123
+						</div>
 					</div>
 				</div>
 			</div>
@@ -139,11 +153,51 @@
 							<h2>Наши рецепты</h2>
 
 							<!-- Вывод элементов рецептов -->
-							<div class="recipes-container">
+							<div class="recipes-container row">
 								<!-- Один рецепт -->
 								<div class="recipes-container__item">
 									<div class="recipes-container__img">
-										<img src="/" alt="alt">
+										<img src="img/resipec--pankake-bery.jpg" alt="alt">
+										<div class="recipes-container__price">
+											<span class="recipes-container__price--rub">160</span> <span class="recipes-container__price--peny">00</span>
+										</div>
+									</div>
+									<div class="recipes-container__content">
+										<div class="recipes-container__tags">
+											вегетарианский, простой
+										</div>
+										<div class="recipes-container__name">
+											<h3>Блинчики с клубникой</h3>
+										</div>
+										<div class="recipes-container__time">
+											<span class="recipes-container__time--hours">0</span>:<span class="recipes-container__time--min">40</span>
+										</div>
+									</div>
+									<div class="recipes-container__get-product"><a href="#">Подобрать продукты</a></div>
+								</div>
+								<div class="recipes-container__item">
+									<div class="recipes-container__img">
+										<img src="img/resipec--pankake-bery.jpg" alt="alt">
+										<div class="recipes-container__price">
+											<span class="recipes-container__price--rub">160</span> <span class="recipes-container__price--peny">00</span>
+										</div>
+									</div>
+									<div class="recipes-container__content">
+										<div class="recipes-container__tags">
+											вегетарианский, простой
+										</div>
+										<div class="recipes-container__name">
+											<h3>Блинчики с клубникой</h3>
+										</div>
+										<div class="recipes-container__time">
+											<span class="recipes-container__time--hours">0</span>:<span class="recipes-container__time--min">40</span>
+										</div>
+									</div>
+									<div class="recipes-container__get-product"><a href="#">Подобрать продукты</a></div>
+								</div>
+								<div class="recipes-container__item">
+									<div class="recipes-container__img">
+										<img src="img/resipec--pankake-bery.jpg" alt="alt">
 										<div class="recipes-container__price">
 											<span class="recipes-container__price--rub">160</span> <span class="recipes-container__price--peny">00</span>
 										</div>

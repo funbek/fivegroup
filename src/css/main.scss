@@ -7,41 +7,57 @@
 // My variables
 @import "inc/_site-variables.scss";
 
-$gutter-width: 10px;
-$grid-padding: 10px;
+// font-awesome
+@import "font-awesome/_variables";
+@import "font-awesome/_mixins";
+@import "font-awesome/_path";
+@import "font-awesome/_core";
+@import "font-awesome/_larger";
+@import "font-awesome/_fixed-width";
+@import "font-awesome/_list";
+@import "font-awesome/_bordered-pulled";
+@import "font-awesome/_animated";
+@import "font-awesome/_rotated-flipped";
+@import "font-awesome/_stacked";
+@import "font-awesome/_icons";
+// ++==++
 
-// Setting up the Magic Grid
-$gutter-width: 10px; // with 1em gutters
-$grid-padding: 10px; // and 1em padding on the grid container
+@include font-face("AvenirNext", "../fonts/AvenirNext/AvenirNextLTPro-MediumCn", medium);
 
 $susy: (
-  flow: ltr,
-  columns: 6,
-  container: 1200px,
-  global-box-sizing: border-box,
-  // debug: (image: show),
-  math: fluid,
-  output: isolate,
-  gutter-position: inside,
+	flow: ltr,
+	columns: 6,
+	container-position: center,
+	global-box-sizing: border-box,
+	math: fluid,
+	gutter-position: inside,
+	output: float,
 );
-
+// Задаем фиксированное значение gutter в padding
+$gutter-width: 15px;
+@mixin gutter-static($gutter-left:$gutter-width, $gutter-right:$gutter-width) {
+	padding-left: $gutter-left;
+	padding-right: $gutter-right;
+}
 .wrapper-block {
-	@include container();
 	width: $mid-wrap;
+	@include container();
 }
 .row {
 	@include clearfix;
-	margin-left: -$gutter-width/2;
-	margin-right: -$gutter-width/2;
+	margin-left: -$gutter-width;
+	margin-right: -$gutter-width;
+}
+// ++==++
+// Убираем подчерк у ссылок
+@mixin no-links() {
+	text-decoration: none;
 }
 
 // ++==++
 // Базовые значения, вынести в переменные
-$g-yellow: #ffcd43;
-$g-dark-blue: #1b1a1b;
-$g-light-blue: #1092dd;
-$g-gray: #ddd;
-$g-dark-gray: #777;
+$g-menu-color: #c90f0f;
+$g-info-menu-color: #eb2626;
 $g-font-light: 300;
 $g-font-regular: 400;
 $g-font-bold: 500;
@@ -53,42 +69,30 @@ $subMenuPosition: $menuWidth - 50px;
 
 // Заголовки
 h1 {
-	color: $g-light-blue;
 	font-size: 48px;
 	line-height: 36px;
 	font-weight: $g-font-light;
 	margin-bottom: 40px;
 }
 h2 {
-	color: $g-dark-blue;
 	font-size: 30px;
 	line-height: 36px;
 	font-weight: $g-font-light;
-	margin-bottom: 30px;
+	margin-bottom: 25px;
 }
 h3 {
-	color: $g-dark-blue;
 	font-size: 36px;
 	line-height: 36px;
 	font-weight: $g-font-regular;
 	margin-bottom: 30px;
 }
 h4 {
-	color: $g-dark-blue;
 	font-size: 20px;
 	line-height: 24px;
 	font-weight: $g-font-regular;
 	margin-bottom: 20px;
 }
 
-
-.wrapper-block {
-	width: $mid-wrap;
-	margin-left: auto;
-	margin-right: auto;
-	padding-left: 15px;
-	padding-right: 15px;
-}
 * {
 	box-sizing: border-box;
 }
@@ -99,15 +103,393 @@ h4 {
 }
 
 body {
-	font-family: 'Roboto', Arial, sans-serif;
+	font-family: 'AvenirNext', Arial, sans-serif;
 	font-size: 16px;
-	line-height: 24px;
-	color: $g-dark-blue;
-	background: url(../img/main-bg.jpg);
 }
 a {
 	@include transition( all .2s ease-in-out );
 }
+
+// Переменные
+
+// Шапка сайта
+.head-site {
+	// Главное меню сайта
+	.main-menu {
+		$menu-height: 40px;
+		height: $menu-height;
+		line-height: $menu-height;
+		$menu-color: #fe9389;
+		background: $g-menu-color;
+
+		.city {
+			@include span(1 of 6);
+			@include gutter-static;
+
+			.city__current {
+				color: $menu-color;
+
+				.city__current__location {
+					padding-right: 5px;
+				}
+
+				.city__current--set {
+					position: relative;
+
+					&:after {
+						line-height: 1;
+						display: block;
+						position: absolute;
+						top: 0;
+						left: 100%;
+						content: "\f107";
+						margin-left: 5px;
+						font-family: "FontAwesome";
+						@include transition(all ease-in-out .2s)
+					}
+				}
+
+				&.active {
+					.city__current--set {
+						&:after {
+							@include transform(rotate(180deg))
+						}
+					}
+				}
+			}
+			.city__list {
+				display: none;
+			}
+		}
+
+		.navigation {
+			@include span(4 of 6);
+			@include gutter-static;
+
+			.navigation__ul {
+				height: $menu-height;
+				display: table;
+
+				.navigation__list {
+					display: table-cell;
+					padding-left: 8px;
+					padding-right: 8px;
+
+					.navigation__link {
+						@include no-links;
+						font-size: 16px;
+						display: block;
+						color: $menu-color;
+
+					}
+
+				}
+			}
+		}
+
+		.phone {
+			@include span(1 of 6);
+			@include gutter-static;
+			text-align: right;
+
+			a {
+				@include no-links;
+				font-size: 18px;
+				color: $menu-color;
+			}
+		}
+	}
+	// ++==++
+
+	// Дополнительное меню сайта
+	.info-menu-block {
+		$info-menu-height: 40px;
+		background: $g-info-menu-color;
+		padding-top: 19px;
+		padding-bottom: 19px;
+		@include clearfix;
+
+		.logo {
+			margin-right: 50px;
+			float: left;
+			height: $info-menu-height;
+			a {
+				display: block;
+			}
+		}
+
+		.info-menu__ul {
+			float: left;
+			font-size: 0;
+
+			.info-menu__list {
+				display: inline-block;
+				padding-left: 50px;
+
+				&:first-child {
+					padding-left: 0;
+				}
+				.info-menu__link {
+					font-size: 20px;
+					color: #fff;
+					@include no-links;
+					display: block;
+					line-height: $info-menu-height;
+				}
+
+			}
+		}
+
+		.user-block {
+			float: right;
+			font-size: 0;
+
+			.user-block__search {
+				margin-right: 30px;
+				display: inline-block;
+
+				a {
+					@include no-links;
+					color: #fff;
+					font-size: 24px;
+					line-height: $info-menu-height;
+				}
+			}
+			.user-block__enter {
+				display: inline-block;
+
+				.btn-enter {
+					@include no-links;
+					display: block;
+					height: $info-menu-height;
+					line-height: $info-menu-height - 4px; //из-за border
+					border: 2px solid #fff;
+					color: #fff;
+					text-align: center;
+					font-size: 18px;
+					padding: 0 15px;
+					border-radius: 20px;
+				}
+			}
+		}
+	}
+	// ++==++
+}
+
+.action-block {
+	$slider-color: #ecdfd3;
+	background: $slider-color;
+	color: #000;
+	padding-top: 50px;
+
+	.action-slider {
+
+		.action-slider__item {
+			height: 500px;
+			position: relative;
+
+			.action-slider__img {
+				position: absolute;
+				top: 0;
+				right: 0;
+			}
+
+			.action-slider__validity {
+				font-size: 20px;
+				margin-bottom: 80px;
+			}
+
+			.action-slider__name {
+				word-spacing: 10000px;
+				font-size: 50px;
+				line-height: 1;
+				margin-bottom: 80px;
+			}
+
+			// Вывод старой и новой цены
+			.action-slider__discount {
+				$left-margin-ball: 35px;
+				position: absolute;
+				bottom: -55px;
+				right: 0;
+				height: 200px;
+				width: 200px;
+				border-radius: 50%;
+				background: #52d05d;
+
+				.action-slider__discount--new {
+					font-size: 0;
+					margin-top: 50px;
+					color: #fff;
+					margin-left: $left-margin-ball;
+
+					.action-slider__discount--rub {
+						line-height: 46px;
+						font-size: 46px;
+						letter-spacing: 2px;
+					}
+
+					.action-slider__discount--peny {
+						line-height: 46px;
+						font-size: 23px;
+						vertical-align: text-bottom;
+						letter-spacing: 1px;
+					}
+				}
+
+				.action-slider__discount--old {
+					font-size: 0;
+					margin-left: $left-margin-ball;
+					margin-top: 10px;
+					color: #0e7b2f;
+					display: inline-block;
+					position: relative;
+					line-height: 1;
+
+					.action-slider__discount--rub {
+						font-size: 20px;
+						line-height: 20px;
+					}
+
+					.action-slider__discount--peny {
+						line-height: 20px;
+						font-size: 14px;
+						vertical-align: text-bottom;
+
+					}
+
+					&:after {
+						content: "";
+						display: block;
+						width: 100%;
+						height: 2px;
+						background: #fff;
+						position: absolute;
+						top: 50%;
+						margin-top: -1px;
+						@include transform(rotate(-20deg));
+					}
+				}
+
+				.action-slider__discount--percent {
+					font-size: 24px;
+					margin-top: 5px;
+					text-align: right;
+					margin-right: 34px;
+					color: #fff;
+				}
+
+
+			}
+			// ++==++
+		}
+	}
+
+}
+// ++==++
+.follow-us {
+	$base-color: #d9cbbc;
+	$height-content: 40px;
+	padding-top: 18px;
+	padding-bottom: 18px;
+
+	.follow-us__block {
+			@include span(2 of 6);
+			@include gutter-static();
+			font-size: 0;
+
+		.follow-us__link {
+			display: inline-block;
+			font-size: 20px;
+			@include no-links;
+			color: $base-color;
+			border: 1px solid $base-color;
+			border-radius: 50%;
+			text-align: center;
+			height: $height-content;
+			width: $height-content;
+			margin-left: 25px;
+			line-height: $height-content - 2px;
+
+			&:first-child {
+				margin-left: 0;
+			}
+		}
+	}
+
+	.follow-us__slider-pager {
+		@include span(2 of 6);
+		@include gutter-static();
+		text-align: center;
+	}
+}
+
+
+// Блок контента
+.content {
+	padding-top: 60px;
+	.recipes {
+		@include linear-gradient(#fff, #f7f7f7);
+
+		h2 {
+			font-size: 28px;
+		}
+
+		.recipes-container__item {
+			@include span(2 of 6);
+			@include gutter-static;
+
+			.recipes-container__img {
+				height: 176px;
+				position: relative;
+
+				img {
+					@include border-top-radius(20px);
+					max-width: 100%;
+					display: block;
+
+				}
+
+				.recipes-container__price {
+					position: absolute;
+					bottom: -18px;
+					right: 18px;
+					background: #46b650;
+					border-radius: 50%;
+					height: 65px;
+					width: 65px;
+					color: #fff;
+					line-height: 65px;
+					text-align: center;
+				}
+			}
+
+			.recipes-container__content {
+				height: 130px;
+				background: #fff;
+				padding-top: 20px;
+			}
+
+			.recipes-container__get-product {
+				@include border-bottom-radius(20px);
+				border-top: 1px solid #f6f7f7;
+
+				a {
+					@include no-links;
+					background: #fff;
+					display: block;
+					line-height: 45px;
+					text-align: center;
+					color: #ec2e2e;
+					font-size: 16px;
+
+				}
+			}
+		}
+	}
+}
+// ++==++
+
 
 // Блокируем поднятие подвала выше нижней точки браузера
 .wrapper {
