@@ -38,4 +38,33 @@ $(document).ready(function() {
           });
           return false;
     });
+
+
+    var owlAction = $(".action-slider");
+
+    owlAction.owlCarousel({
+      loop:true,
+      nav:false,
+      items:1,
+      dotsContainer: '#action-dots',
+    });
+
+    var owlRecipes = $(".recipes-container");
+
+    owlRecipes.owlCarousel({
+      loop:false,
+      nav:false,
+      margin:30,
+      responsive:{
+        0:{
+            items:1
+        },
+        600:{
+            items:3
+        },
+        1000:{
+            items:3
+        }
+      }
+    });
 })

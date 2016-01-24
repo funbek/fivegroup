@@ -92,8 +92,7 @@
 				<div class="wrapper-block">
 					<!-- Слайдер акций -->
 					<div class="action-slider">
-						<ul>
-							<li class="action-slider__item">
+						<div class="action-slider__item item">
 								<!-- Выводи изображения слайдера -->
 								<img src="img/action-slider--chicken.png" class="action-slider__img" alt="Окорочка куриные охлажденные">
 								<!-- ++==++ -->
@@ -122,8 +121,67 @@
 									<div class="action-slider__discount--percent">-<span class="action-slider__discount--num">20</span>%</div>
 								</div>
 								<!-- ++==++ -->
-							</li>
-						</ul>
+						</div>
+						<div class="action-slider__item item">
+								<!-- Выводи изображения слайдера -->
+								<img src="img/action-slider--chicken.png" class="action-slider__img" alt="Окорочка куриные охлажденные">
+								<!-- ++==++ -->
+
+								<div class="action-slider__validity">
+									c 30 июня по 6 июля 2015 года
+								</div>
+								<div class="action-slider__name">
+									Окорочка
+									куриные
+									охлажденные
+								</div>
+								<div class="action-slider__packing">
+									1 кг
+								</div>
+								<!-- Вывод старой и новой цены -->
+								<div class="action-slider__discount">
+									<div class="action-slider__discount--new">
+										<span class="action-slider__discount--rub">129</span>
+										<span class="action-slider__discount--peny">00</span>
+									</div>
+									<div class="action-slider__discount--old">
+										<span class="action-slider__discount--rub">189</span>
+										<span class="action-slider__discount--peny">50</span>
+									</div>
+									<div class="action-slider__discount--percent">-<span class="action-slider__discount--num">20</span>%</div>
+								</div>
+								<!-- ++==++ -->
+						</div>
+						<div class="action-slider__item item">
+								<!-- Выводи изображения слайдера -->
+								<img src="img/action-slider--chicken.png" class="action-slider__img" alt="Окорочка куриные охлажденные">
+								<!-- ++==++ -->
+
+								<div class="action-slider__validity">
+									c 30 июня по 6 июля 2015 года
+								</div>
+								<div class="action-slider__name">
+									Окорочка
+									куриные
+									охлажденные
+								</div>
+								<div class="action-slider__packing">
+									1 кг
+								</div>
+								<!-- Вывод старой и новой цены -->
+								<div class="action-slider__discount">
+									<div class="action-slider__discount--new">
+										<span class="action-slider__discount--rub">129</span>
+										<span class="action-slider__discount--peny">00</span>
+									</div>
+									<div class="action-slider__discount--old">
+										<span class="action-slider__discount--rub">189</span>
+										<span class="action-slider__discount--peny">50</span>
+									</div>
+									<div class="action-slider__discount--percent">-<span class="action-slider__discount--num">20</span>%</div>
+								</div>
+								<!-- ++==++ -->
+						</div>
 					</div>
 				</div>
 			</div>
@@ -137,8 +195,8 @@
 								<a href="#" class="follow-us__link fa fa-at" rel="nofollow" target="_blank"></a>
 							<!--/noindex-->
 						</div>
-						<div class="follow-us__slider-pager">
-							123
+						<div class="follow-us__slider-pager" id="action-dots">
+
 						</div>
 					</div>
 				</div>
@@ -153,67 +211,73 @@
 							<h2>Наши рецепты</h2>
 
 							<!-- Вывод элементов рецептов -->
-							<div class="recipes-container row">
+							<div class="recipes-container">
 								<!-- Один рецепт -->
-								<div class="recipes-container__item">
-									<div class="recipes-container__img">
-										<img src="img/resipec--pankake-bery.jpg" alt="alt">
-										<div class="recipes-container__price">
-											<span class="recipes-container__price--rub">160</span> <span class="recipes-container__price--peny">00</span>
+								<div class="recipes-container__item item">
+									<a href="#">
+										<div class="recipes-container__img">
+											<img src="img/resipec--pankake-bery.jpg" alt="alt">
+											<div class="recipes-container__price">
+												<span class="recipes-container__price--rub">160</span> <span class="recipes-container__price--peny">00</span>
+											</div>
 										</div>
-									</div>
-									<div class="recipes-container__content">
-										<div class="recipes-container__tags">
-											вегетарианский, простой
+										<div class="recipes-container__content">
+											<div class="recipes-container__tags">
+												вегетарианский, простой
+											</div>
+											<div class="recipes-container__name">
+												<h3>Блинчики с клубникой</h3>
+											</div>
+											<div class="recipes-container__time">
+												<span class="recipes-container__time--hours">0</span>:<span class="recipes-container__time--min">40</span>
+											</div>
 										</div>
-										<div class="recipes-container__name">
-											<h3>Блинчики с клубникой</h3>
-										</div>
-										<div class="recipes-container__time">
-											<span class="recipes-container__time--hours">0</span>:<span class="recipes-container__time--min">40</span>
-										</div>
-									</div>
-									<div class="recipes-container__get-product"><a href="#">Подобрать продукты</a></div>
+										<div class="recipes-container__get-product">Подобрать продукты</div>
+									</a>
 								</div>
-								<div class="recipes-container__item">
-									<div class="recipes-container__img">
-										<img src="img/resipec--pankake-bery.jpg" alt="alt">
-										<div class="recipes-container__price">
-											<span class="recipes-container__price--rub">160</span> <span class="recipes-container__price--peny">00</span>
+								<div class="recipes-container__item item">
+									<a href="#">
+										<div class="recipes-container__img">
+											<img src="img/resipec--pankake-bery.jpg" alt="alt">
+											<div class="recipes-container__price">
+												<span class="recipes-container__price--rub">160</span> <span class="recipes-container__price--peny">00</span>
+											</div>
 										</div>
-									</div>
-									<div class="recipes-container__content">
-										<div class="recipes-container__tags">
-											вегетарианский, простой
+										<div class="recipes-container__content">
+											<div class="recipes-container__tags">
+												вегетарианский, простой
+											</div>
+											<div class="recipes-container__name">
+												<h3>Блинчики с клубникой</h3>
+											</div>
+											<div class="recipes-container__time">
+												<span class="recipes-container__time--hours">0</span>:<span class="recipes-container__time--min">40</span>
+											</div>
 										</div>
-										<div class="recipes-container__name">
-											<h3>Блинчики с клубникой</h3>
-										</div>
-										<div class="recipes-container__time">
-											<span class="recipes-container__time--hours">0</span>:<span class="recipes-container__time--min">40</span>
-										</div>
-									</div>
-									<div class="recipes-container__get-product"><a href="#">Подобрать продукты</a></div>
+										<div class="recipes-container__get-product">Подобрать продукты</div>
+									</a>
 								</div>
-								<div class="recipes-container__item">
-									<div class="recipes-container__img">
-										<img src="img/resipec--pankake-bery.jpg" alt="alt">
-										<div class="recipes-container__price">
-											<span class="recipes-container__price--rub">160</span> <span class="recipes-container__price--peny">00</span>
+								<div class="recipes-container__item item">
+									<a href="#">
+										<div class="recipes-container__img">
+											<img src="img/resipec--pankake-bery.jpg" alt="alt">
+											<div class="recipes-container__price">
+												<span class="recipes-container__price--rub">160</span> <span class="recipes-container__price--peny">00</span>
+											</div>
 										</div>
-									</div>
-									<div class="recipes-container__content">
-										<div class="recipes-container__tags">
-											вегетарианский, простой
+										<div class="recipes-container__content">
+											<div class="recipes-container__tags">
+												вегетарианский, простой
+											</div>
+											<div class="recipes-container__name">
+												<h3>Блинчики с клубникой</h3>
+											</div>
+											<div class="recipes-container__time">
+												<span class="recipes-container__time--hours">0</span>:<span class="recipes-container__time--min">40</span>
+											</div>
 										</div>
-										<div class="recipes-container__name">
-											<h3>Блинчики с клубникой</h3>
-										</div>
-										<div class="recipes-container__time">
-											<span class="recipes-container__time--hours">0</span>:<span class="recipes-container__time--min">40</span>
-										</div>
-									</div>
-									<div class="recipes-container__get-product"><a href="#">Подобрать продукты</a></div>
+										<div class="recipes-container__get-product">Подобрать продукты</div>
+									</a>
 								</div>
 								<!-- ++==++ -->
 							</div>
@@ -226,7 +290,7 @@
 
 				<div class="trademarks">
 					<div class="wrapper-block">
-						<div class="trademarks__container">
+						<div class="trademarks__container row">
 							<!-- Пустые элементы задаются empty,
 							не пустые full -->
 							<div class="trademarks__container--empty">
@@ -245,7 +309,7 @@
 
 							</div>
 							<div class="trademarks__container--full">
-								+<span class="trademarks__container--num">456</span>
+									<span class="trademarks__container--num">+456</span>
 							</div>
 						</div>
 					</div>
@@ -255,14 +319,10 @@
 				<!-- Количество магазинов -->
 				<div class="count-store">
 					<div class="wrapper-block">
-						<div class="count-store__baloon">
-							<img src="logo" alt="пятёрочка">
-						</div>
-						<div class="count-store__num">
-							5 100
-						</div>
-						<div class="count-store__name">
-							магазинов
+						<div class="count-store__text">
+							<img class="ballon-store" src="img/count-store--ballon.png" alt="пятёрочка">
+							<span class="count-store__num">5 100</span>
+							<div class="count-store__num__store">магазинов</div>
 						</div>
 					</div>
 				</div>
@@ -270,15 +330,17 @@
 
 				<div class="loyality">
 					<div class="wrapper-block">
-						<h2>Платите меньше</h2>
-						<div class="loyality__description">
-							Станьте частью программы лояльности: получите карту Пятерочки в любом магазине сети и покупайте дешевле.
-						</div>
-						<div class="loyality__btn">
-							<a href="#">Зарегистрировать карту</a>
+						<div class="loyality__content">
+							<h2>Платите меньше</h2>
+							<div class="loyality__description">
+								Станьте частью программы лояльности: получите карту<br> Пятерочки в любом магазине сети и покупайте дешевле.
+							</div>
+							<div class="loyality__btn">
+								<a href="#">Зарегистрировать карту</a>
+							</div>
 						</div>
 						<div class="loyality__cart">
-							<img src="/" alt="Карта пятёрочки">
+							<img src="img/cart-logo.png" srcset="img/cart-logo@2.png 2x" alt="Карта пятёрочки">
 						</div>
 					</div>
 				</div>
@@ -382,12 +444,13 @@
 					</div>
 					<div class="info-menu__contacts">
 						<div class="info-menu__contacts__logo">
-							<img src="/" alt="Пятёрочка">
+							<img src="img/footer-site--logo.png" alt="Пятёрочка">
 						</div>
 						<div class="info-menu__contacts__content">
 							<p>Головной офис:</p>
 							<p>Адрес: 109029, Москва, Средняя Калитниковская ул.,</p>
-							<p>д. 28, стр. 4. Телефон: <a href="tel:+74956628888">(495) 662-88-88</a></p>
+							<p>д. 28, стр. 4. Телефон:</p>
+							<p><a href="tel:+74956628888">(495) 662-88-88</a></p>
 						</div>
 					</div>
 				</div>

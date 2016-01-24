@@ -35,6 +35,10 @@ $susy: (
 );
 // Задаем фиксированное значение gutter в padding
 $gutter-width: 15px;
+
+@include bp(hd) {
+	$gutter-width: 26.5px;
+}
 @mixin gutter-static($gutter-left:$gutter-width, $gutter-right:$gutter-width) {
 	padding-left: $gutter-left;
 	padding-right: $gutter-right;
@@ -42,6 +46,10 @@ $gutter-width: 15px;
 .wrapper-block {
 	width: $mid-wrap;
 	@include container();
+
+	@include bp(hd) {
+		width: $big-wrap;
+	}
 }
 .row {
 	@include clearfix;
@@ -58,6 +66,7 @@ $gutter-width: 15px;
 // Базовые значения, вынести в переменные
 $g-menu-color: #c90f0f;
 $g-info-menu-color: #eb2626;
+$g-info-red: #ec2e2e;
 $g-font-light: 300;
 $g-font-regular: 400;
 $g-font-bold: 500;
@@ -121,6 +130,12 @@ a {
 		line-height: $menu-height;
 		$menu-color: #fe9389;
 		background: $g-menu-color;
+		position: relative;
+		z-index: 20px;
+
+		@include bp(mobile) {
+			background: none;
+		}
 
 		.city {
 			@include span(1 of 6);
@@ -135,6 +150,7 @@ a {
 
 				.city__current--set {
 					position: relative;
+					cursor: pointer;
 
 					&:after {
 						line-height: 1;
@@ -154,6 +170,33 @@ a {
 						&:after {
 							@include transform(rotate(180deg))
 						}
+					}
+
+					& + .city__list {
+						display: block;
+						padding: 20px 0;
+						background: $g-menu-color;
+						z-index: 2;
+
+						.city__list--get {
+
+							a {
+								@include no-links;
+								color: #fff;
+								font-size: 14px;
+								line-height: 20px;
+								color: $menu-color;
+								display: block;
+								padding: 5px 15px;
+								@include transition(all ease-in-out .2s)
+
+								&:hover {
+									background: $g-info-menu-color;
+									color: #fff;
+								}
+							}
+						}
+
 					}
 				}
 			}
@@ -180,7 +223,11 @@ a {
 						font-size: 16px;
 						display: block;
 						color: $menu-color;
+						@include transition(all ease-in-out .2s)
 
+						&:hover {
+							color: #fff;
+						}
 					}
 
 				}
@@ -269,6 +316,12 @@ a {
 					font-size: 18px;
 					padding: 0 15px;
 					border-radius: 20px;
+					@include transition(all ease-in-out .2s);
+
+					&:hover {
+						background: #fff;
+						color: $g-info-red;
+					}
 				}
 			}
 		}
@@ -280,18 +333,22 @@ a {
 	$slider-color: #ecdfd3;
 	background: $slider-color;
 	color: #000;
-	padding-top: 50px;
+	padding-top: 0;
+
 
 	.action-slider {
+		position: relative;
+		top: 55px;
 
 		.action-slider__item {
-			height: 500px;
+			height: 505px;
 			position: relative;
 
 			.action-slider__img {
 				position: absolute;
 				top: 0;
 				right: 0;
+				width: auto;
 			}
 
 			.action-slider__validity {
@@ -310,7 +367,7 @@ a {
 			.action-slider__discount {
 				$left-margin-ball: 35px;
 				position: absolute;
-				bottom: -55px;
+				bottom: 0;
 				right: 0;
 				height: 200px;
 				width: 200px;
@@ -325,12 +382,12 @@ a {
 
 					.action-slider__discount--rub {
 						line-height: 46px;
-						font-size: 46px;
+						font-size: 56px;
 						letter-spacing: 2px;
 					}
 
 					.action-slider__discount--peny {
-						line-height: 46px;
+						line-height: 58px;
 						font-size: 23px;
 						vertical-align: text-bottom;
 						letter-spacing: 1px;
@@ -347,13 +404,13 @@ a {
 					line-height: 1;
 
 					.action-slider__discount--rub {
-						font-size: 20px;
+						font-size: 28px;
 						line-height: 20px;
 					}
 
 					.action-slider__discount--peny {
 						line-height: 20px;
-						font-size: 14px;
+						font-size: 16px;
 						vertical-align: text-bottom;
 
 					}
@@ -392,6 +449,8 @@ a {
 	$height-content: 40px;
 	padding-top: 18px;
 	padding-bottom: 18px;
+	position: relative;
+	z-index: 10;
 
 	.follow-us__block {
 			@include span(2 of 6);
@@ -410,6 +469,23 @@ a {
 			width: $height-content;
 			margin-left: 25px;
 			line-height: $height-content - 2px;
+			@include transition(all ease-in-out .2s);
+
+			&:hover {
+				color: #fff;
+				border-color: transparent;
+			}
+			&.fa-vk:hover {
+				background: #597da3;
+			}
+
+			&.fa-odnoklassniki:hover {
+				background: #f58220;
+			}
+
+			&.fa-at:hover {
+				background: #168de2;
+			}
 
 			&:first-child {
 				margin-left: 0;
@@ -421,6 +497,28 @@ a {
 		@include span(2 of 6);
 		@include gutter-static();
 		text-align: center;
+			line-height: 40px;
+
+
+		.owl-dot {
+			display: inline-block;
+			width: 15px;
+			height: 15px;
+			border-radius: 50%;
+			border: 2px solid #ecdfd3;
+			margin-left: 30px;
+			cursor: pointer;
+
+			&:first-child {
+				margin-left: 0;
+			}
+
+			&.active {
+				border-color: $g-info-red;
+				background: $g-info-red;
+			}
+		}
+
 	}
 }
 
@@ -429,6 +527,7 @@ a {
 .content {
 	padding-top: 60px;
 	.recipes {
+		padding-bottom: 30px;
 		@include linear-gradient(#fff, #f7f7f7);
 
 		h2 {
@@ -436,15 +535,31 @@ a {
 		}
 
 		.recipes-container__item {
-			@include span(2 of 6);
-			@include gutter-static;
+			a {
+				@include no-links;
+
+				&:hover {
+					.recipes-container__get-product {
+						background: $g-info-red;
+						color: #fff;
+					}
+				}
+			}
+			// @include gutter-static;
+			@include bp(hd) {
+				// padding-left: 26.5px;
+				// padding-right: 26.5px;
+			}
 
 			.recipes-container__img {
 				height: 176px;
+				@include bp(hd) {
+					height: 220px;
+				}
 				position: relative;
 
 				img {
-					@include border-top-radius(20px);
+					@include border-top-radius(15px);
 					max-width: 100%;
 					display: block;
 
@@ -466,65 +581,309 @@ a {
 
 			.recipes-container__content {
 				height: 130px;
+				@include bp(hd) {
+					height: 160px;
+				}
 				background: #fff;
 				padding-top: 20px;
+				padding-left: 20px;
+				padding-right: 20px;
+
+				.recipes-container__tags {
+					color: #ccc;
+					color: rgba(0,0,0,.4);
+					font-size: 14px;
+					position: relative;
+
+					&:before {
+						content: "";
+						background: url(../img/tag--paper.png) no-repeat;
+						display: inline-block;
+						width: 22px;
+						height: 18px;
+					}
+				}
+
+				.recipes-container__name {
+
+					h3 {
+						font-size: 20px;
+						margin-bottom: 10px;
+						color: #000;
+					}
+				}
+
+
+				.recipes-container__time {
+					font-size: 16px;
+					color: #ccc;
+					color: rgba(0,0,0,.4);
+					position: relative;
+
+					&:before {
+						content: "\f017";
+						font-family: "FontAwesome";
+						padding-right: 2px;
+					}
+				}
+
 			}
 
 			.recipes-container__get-product {
-				@include border-bottom-radius(20px);
 				border-top: 1px solid #f6f7f7;
 
-				a {
-					@include no-links;
-					background: #fff;
-					display: block;
-					line-height: 45px;
-					text-align: center;
-					color: #ec2e2e;
-					font-size: 16px;
+				@include border-bottom-radius(15px);
+				@include transition(all ease-in-out .2s);
+				background: #fff;
+				display: block;
+				line-height: 45px;
+				text-align: center;
+				color: $g-info-red;
+				font-size: 16px;
 
-				}
 			}
 		}
 	}
 }
 // ++==++
 
+.trademarks {
+	$circle-wh: 100px;
+	background: #fff;
+	padding-top: 55px;
+	padding-bottom: 55px;
 
-// Блокируем поднятие подвала выше нижней точки браузера
-.wrapper {
-    min-height: 100%;
-    padding-bottom: 40px;
-    margin-bottom: -188px;
+	.trademarks__container {
+
+		.trademarks__container--empty {
+			@include span(1 of 6);
+			@include gutter-static;
+			position: relative;
+			text-align: center;
+			font-size: 0;
+
+			&:after {
+				content: "";
+				width: $circle-wh;
+				height: $circle-wh;
+				background: #f2f2f2;
+				border-radius: 50%;
+				display: inline-block;
+			}
+		}
+
+		.trademarks__container--full {
+			@include span(1 of 6);
+			@include gutter-static;
+			color: #fff;
+			line-height: $circle-wh;
+			position: relative;
+			text-align: center;
+
+			&:after {
+				content: "";
+				border-radius: 50%;
+				display: inline-block;
+				background: $g-info-red;
+				width: $circle-wh;
+				height: $circle-wh;
+				position: absolute;
+				top: 0;
+				left: 50%;
+				margin-left: -$circle-wh/2;
+				z-index: 1;
+			}
+
+			.trademarks__container--num {
+				font-size: 27px;
+				position: relative;
+				z-index: 2;
+			}
+		}
+
+	}
 }
 
-.wrapper:after {
-    content: "";
-    display: block
+.count-store {
+	$element-height: 300px;
+	background: #0f8433;
+	height: $element-height;
+	text-align: center;
+
+	.wrapper-block {
+		background: url(../img/count-store--map.png) no-repeat;
+		background-position: 110px 0;
+		height: $element-height;
+		padding-top: 80px;
+
+		@include bp (hd) {
+			background-position: 250px 0;
+		}
+
+		.count-store__text {
+			font-size: 123px;
+			color: #fff;
+			position: relative;
+			display: inline-block;
+			padding-left: 120px;
+
+			.ballon-store {
+				position: absolute;
+				top: 0;
+				left: 0;
+			}
+			.count-store__num__store {
+				color: #bdcf01;
+				text-transform: uppercase;
+				font-size: 24px;
+				text-align: left;
+			}
+		}
+	}
 }
 
-.footer-site,.wrapper:after {
-    height: 188px;
+
+.loyality {
+	$btn-height: 60px;
+
+	padding: 60px 0;
+	background: $g-info-red;
+	color: #fff;
+
+	.wrapper-block {
+		position: relative;
+
+		.loyality__content {
+			@include span(4 of 6);
+			@include gutter-static;
+
+			h2 {
+				font-size: 50px;
+				margin-bottom: 25px;
+			}
+
+			.loyality__description {
+				font-size: 18px;
+				line-height: 25px;
+				margin-bottom: 50px;
+			}
+
+			.loyality__btn {
+				a {
+					@include no-links;
+					color: #fff;
+					font-size: 18px;
+					display: inline-block;
+					padding: 0 35px;
+					height: $btn-height;
+					line-height: $btn-height - 4px;
+					border: 2px solid #fff;
+					border-radius: 20px;
+
+				}
+			}
+		}
+
+		.loyality__cart {
+			position: absolute;
+			top: 0;
+			right: 20px;
+			padding: 20px;
+			background: #fff;
+			border-radius: 15px;
+			width: 340px;
+			height: 200px;
+		}
+
+	}
+
 }
+
+.footer-site {
+	padding-top: 60px;
+	padding-bottom: 190px;
+	background: #4d4d4d;
+
+	.info-menu__block {
+		@include span(1 of 6);
+		@include gutter-static;
+
+		.info-menu__head {
+			color: #ccc;
+			color: rgba(255,255,255,.4);
+			font-size: 18px;
+			line-height: 28px;
+			margin-bottom: 25px;
+		}
+
+		.info-menu__submenu {
+			li {
+				margin-bottom: 10px;
+
+				a {
+					@include no-links;
+					font-size: 14px;
+					color: #fff;
+					line-height: 15px;
+
+				}
+
+				&:last-child {
+					margin-bottom: 0;
+				}
+			}
+		}
+	}
+
+	.info-menu__contacts {
+		@include span(1 of 6);
+		@include gutter-static;
+
+		.info-menu__contacts__logo {
+			margin-bottom: 20px;
+		}
+
+		.info-menu__contacts__content {
+
+			p {
+				white-space: nowrap;
+				color: #ccc;
+				color: rgba(255,255,255,.4);
+				font-size: 16px;
+				margin-bottom: 15px;
+
+			}
+			a {
+				@include no-links;
+				color: #ccc;
+				color: rgba(255,255,255,.4s);
+			}
+		}
+	}
+}
+
+
+// Карусель акций
+// .owl-carousel .owl-wrapper-outer {
+// 	overflow-y: visible;
+// }
 // ++==++
 
-
-
-// @media (min-width: 1199px) {
+// @media (min-width: 1300px) {
 // 	.wrapper-block {
 // 		width: $big-wrap;
 // 	}
 // }
 
-@media (max-width: 991px) {
-	.wrapper-block{
-			width: $tablet-wrap;
-	}
-}
+// @media (max-width: 991px) {
+// 	.wrapper-block{
+// 			width: $tablet-wrap;
+// 	}
+// }
 
-@media (max-width: 767px) {
-	.wrapper-block{
-		width: $mobile-wrap;
-		min-width: 320px;
-	}
-}
+// @media (max-width: 767px) {
+// 	.wrapper-block{
+// 		width: $mobile-wrap;
+// 		min-width: 320px;
+// 	}
+// }

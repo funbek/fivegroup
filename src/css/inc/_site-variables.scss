@@ -1,5 +1,32 @@
 // size of wrapper-block new
-$big-wrap: 1170px;
+$big-wrap: 1246px;
 $mid-wrap: 964px;
-$tablet-wrap: 620px;
 $mobile-wrap: 100%;
+
+
+// mixin for retina
+@mixin retina {
+  @media
+    only screen and (-webkit-min-device-pixel-ratio: 2),
+    only screen and (min--moz-device-pixel-ratio: 2),
+    only screen and (-o-min-device-pixel-ratio: 2/1),
+    only screen and (min-device-pixel-ratio: 2),
+    only screen and (min-resolution: 192dpi),
+    only screen and (min-resolution: 2dppx) {
+    @content;
+  }
+}
+
+
+// Breakpoints
+@mixin bp($point) {
+  @if $point == hd {
+    @media (min-width: 1300px) { @content; }
+  }
+  @else if $point == mid {
+    @media (max-width: 1299px) and (min-width: 1001px) { @content; }
+  }
+  @else if $point == mobile {
+    @media (max-width: 1000px) { @content; }
+  }
+}
