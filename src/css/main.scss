@@ -42,19 +42,35 @@ $gutter-width: 15px;
 @mixin gutter-static($gutter-left:$gutter-width, $gutter-right:$gutter-width) {
 	padding-left: $gutter-left;
 	padding-right: $gutter-right;
+
+	@include bp(mobile) {
+		padding-left: 0;
+		padding-right: 0;
+	}
 }
 .wrapper-block {
 	width: $mid-wrap;
+	position: relative;
 	@include container();
 
 	@include bp(hd) {
 		width: $big-wrap;
+	}
+	@include bp(mobile) {
+		width: $mobile-wrap;
+		padding-left: 10px;
+		padding-right: 10px;
 	}
 }
 .row {
 	@include clearfix;
 	margin-left: -$gutter-width;
 	margin-right: -$gutter-width;
+
+	@include bp(mobile) {
+		margin-left: 0;
+		margin-right: 0;
+	}
 }
 // ++==++
 // Убираем подчерк у ссылок
@@ -114,11 +130,22 @@ h4 {
 body {
 	font-family: 'AvenirNext', Arial, sans-serif;
 	font-size: 16px;
+	overflow-x: hidden;
 }
 a {
 	@include transition( all .2s ease-in-out );
 }
-
+.no-mobile {
+	@include bp(mobile) {
+		display: none;
+	}
+}
+.only-mobile {
+	display: none;
+	@include bp(mobile) {
+		display: block;
+	}
+}
 // Переменные
 
 // Шапка сайта
@@ -135,114 +162,171 @@ a {
 
 		@include bp(mobile) {
 			background: none;
+			position: absolute;
+			top: 20px;
+			left: 0;
+			width: 100%;
 		}
 
-		.city {
-			@include span(1 of 6);
-			@include gutter-static;
 
-			.city__current {
-				color: $menu-color;
+		.main-menu__block {
+			@include bp(mobile) {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+			}
 
-				.city__current__location {
-					padding-right: 5px;
-				}
 
-				.city__current--set {
-					position: relative;
-					cursor: pointer;
+			.mobile-menu {
+				display: none;
+				@include bp(mobile) {
+					display: block;
+					position: absolute;
+					z-index: 1;
+					top: 0;
+					right: 0;
+					width: 40px;
+					height: 40px;
+					line-height: 40px;
+					text-align: center;
+					color: #fff;
+					font-size: 24px;
 
-					&:after {
-						line-height: 1;
-						display: block;
-						position: absolute;
-						top: 0;
-						left: 100%;
-						content: "\f107";
-						margin-left: 5px;
-						font-family: "FontAwesome";
-						@include transition(all ease-in-out .2s)
-					}
-				}
-
-				&.active {
-					.city__current--set {
-						&:after {
-							@include transform(rotate(180deg))
+					&.active {
+						& + .main-menu__wrap {
+							display: block;
+							background: $g-info-menu-color;
+							z-index: 2;
 						}
+
+					}
+				}
+			}
+
+			.main-menu__wrap {
+				@include bp(mobile) {
+					position: absolute;
+					top: 40px;
+					left: 0;
+					display: none;
+					width: 100%;
+
+				}
+
+				.city {
+					@include span(1 of 6);
+					@include gutter-static;
+
+					@include bp (mobile) {
+						width: 100%;
+
 					}
 
-					& + .city__list {
-						display: block;
-						padding: 20px 0;
-						background: $g-menu-color;
-						z-index: 2;
+					.city__current {
+						color: $menu-color;
 
-						.city__list--get {
+						.city__current__location {
+							padding-right: 5px;
+						}
 
-							a {
-								@include no-links;
-								color: #fff;
-								font-size: 14px;
-								line-height: 20px;
-								color: $menu-color;
+						.city__current--set {
+							position: relative;
+							cursor: pointer;
+
+							&:after {
+								line-height: 1;
 								display: block;
-								padding: 5px 15px;
+								position: absolute;
+								top: 0;
+								left: 100%;
+								content: "\f107";
+								margin-left: 5px;
+								font-family: "FontAwesome";
 								@include transition(all ease-in-out .2s)
-
-								&:hover {
-									background: $g-info-menu-color;
-									color: #fff;
-								}
 							}
 						}
 
-					}
-				}
-			}
-			.city__list {
-				display: none;
-			}
-		}
+						&.active {
+							.city__current--set {
+								&:after {
+									@include transform(rotate(180deg))
+								}
+							}
 
-		.navigation {
-			@include span(4 of 6);
-			@include gutter-static;
+							& + .city__list {
+								display: block;
+								padding: 20px 0;
+								background: $g-menu-color;
+								z-index: 2;
 
-			.navigation__ul {
-				height: $menu-height;
-				display: table;
+								.city__list--get {
 
-				.navigation__list {
-					display: table-cell;
-					padding-left: 8px;
-					padding-right: 8px;
+									a {
+										@include no-links;
+										color: #fff;
+										font-size: 14px;
+										line-height: 20px;
+										color: $menu-color;
+										display: block;
+										padding: 5px 15px;
+										@include transition(all ease-in-out .2s)
 
-					.navigation__link {
-						@include no-links;
-						font-size: 16px;
-						display: block;
-						color: $menu-color;
-						@include transition(all ease-in-out .2s)
+										&:hover {
+											background: $g-info-menu-color;
+											color: #fff;
+										}
+									}
+								}
 
-						&:hover {
-							color: #fff;
+							}
 						}
 					}
-
+					.city__list {
+						display: none;
+					}
 				}
-			}
-		}
 
-		.phone {
-			@include span(1 of 6);
-			@include gutter-static;
-			text-align: right;
+				.navigation {
+					@include span(4 of 6);
+					@include gutter-static;
 
-			a {
-				@include no-links;
-				font-size: 18px;
-				color: $menu-color;
+					.navigation__ul {
+						height: $menu-height;
+						display: table;
+
+						.navigation__list {
+							display: table-cell;
+							padding-left: 8px;
+							padding-right: 8px;
+
+							.navigation__link {
+								@include no-links;
+								font-size: 16px;
+								display: block;
+								color: $menu-color;
+								@include transition(all ease-in-out .2s)
+
+								&:hover {
+									color: #fff;
+								}
+							}
+
+						}
+					}
+				}
+
+				.phone {
+					@include span(1 of 6);
+					@include gutter-static;
+					text-align: right;
+
+					a {
+						@include no-links;
+						font-size: 18px;
+						color: $menu-color;
+					}
+				}
 			}
 		}
 	}
@@ -260,14 +344,25 @@ a {
 			margin-right: 50px;
 			float: left;
 			height: $info-menu-height;
+
+			@include bp(mobile) {
+				float: left;
+			}
+
 			a {
 				display: block;
 			}
 		}
+		.info-menu {
+			@include clearfix;
 
+		}
 		.info-menu__ul {
 			float: left;
 			font-size: 0;
+			@include bp(mobile) {
+				float: none;
+			}
 
 			.info-menu__list {
 				display: inline-block;
@@ -804,9 +899,20 @@ a {
 	padding-bottom: 190px;
 	background: #4d4d4d;
 
+	@include bp(mobile) {
+		padding-top: 0;
+		padding-bottom: 20px;
+	}
+
 	.info-menu__block {
 		@include span(1 of 6);
 		@include gutter-static;
+
+		@include bp(mobile) {
+			float: none;
+			width: 100%;
+			border-bottom: 1px solid #aaa;
+		}
 
 		.info-menu__head {
 			color: #ccc;
@@ -814,6 +920,38 @@ a {
 			font-size: 18px;
 			line-height: 28px;
 			margin-bottom: 25px;
+			@include bp(mobile) {
+				padding: 15px 0;
+				margin-bottom: 0;
+				position: relative;
+
+				&:after {
+					content: "\f107";
+					font-family: "FontAwesome";
+					position: absolute;
+					top: 0;
+					right: 0;
+					display: block;
+					width: 20px;
+					height: 20px;
+					top: 50%;
+					margin-top: -10px;
+					vertical-align: 20px;
+					text-align: center;
+					@include transition(all ease-in-out .2s);
+
+				}
+
+				&.active {
+					& + .info-menu__submenu {
+						display: block;
+					}
+
+					&:after {
+						@include transform(rotate(180deg));
+					}
+				}
+			}
 		}
 
 		.info-menu__submenu {
@@ -831,6 +969,11 @@ a {
 				&:last-child {
 					margin-bottom: 0;
 				}
+				padding-bottom: 15px;
+			}
+
+			@include bp(mobile) {
+				display: none;
 			}
 		}
 	}
@@ -838,6 +981,12 @@ a {
 	.info-menu__contacts {
 		@include span(1 of 6);
 		@include gutter-static;
+
+		@include bp(mobile) {
+			float: none;
+			width: 100%;
+			margin-top: 20px;
+		}
 
 		.info-menu__contacts__logo {
 			margin-bottom: 20px;

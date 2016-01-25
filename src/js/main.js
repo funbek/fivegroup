@@ -13,6 +13,15 @@ $(document).ready(function() {
           event.stopPropagation();
     });
 
+    // добавление класса active при нажатии
+    ;(function() {
+      var $trigger = $(".trigger");
+      $trigger.on("click", function() {
+          $trigger.not(this).removeClass("active");
+          $(this).toggleClass("active");
+      });
+    })();
+
     // Прокрутка страницы наверх
     var top_show = 150; // В каком положении полосы прокрутки начинать показ кнопки "Наверх"
     var delay = 1000; // Задержка прокрутки
@@ -56,11 +65,11 @@ $(document).ready(function() {
       nav:false,
       margin:30,
       responsive:{
-        0:{
+        480:{
             items:1
         },
-        600:{
-            items:3
+        800:{
+            items:2
         },
         1000:{
             items:3

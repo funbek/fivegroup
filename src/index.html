@@ -13,45 +13,56 @@
 				<!-- Глваное меню сайта -->
 				<div class="main-menu">
 					<div class="wrapper-block">
-						<div class="row">
-							<div class="city">
-								<div class="city__current trigger-button">
-									<span class="city__current__location fa fa-map-marker"></span><span class="city__current--set">Омск</span>
+						<div class="main-menu__block row">
+						<!-- кнопка меню на мобильных устройствах -->
+							<div class="mobile-menu trigger-button fa fa-bars"></div>
+						<!-- ++==++ -->
+							<div class="main-menu__wrap">
+								<div class="city">
+									<div class="city__current trigger-button">
+										<span class="city__current__location fa fa-map-marker"></span><span class="city__current--set">Омск</span>
+									</div>
+									<div class="city__list hidden-block">
+										<ul>
+											<li class="city__list--get"><a href="#">Санкт-Петербург</a></li>
+											<li class="city__list--get"><a href="#">Москва</a></li>
+											<li class="city__list--get"><a href="#">Рязань</a></li>
+										</ul>
+									</div>
 								</div>
-								<div class="city__list hidden-block">
-									<ul>
-										<li class="city__list--get"><a href="#">Санкт-Петербург</a></li>
-										<li class="city__list--get"><a href="#">Москва</a></li>
-										<li class="city__list--get"><a href="#">Рязань</a></li>
-									</ul>
+								<div class="navigation">
+									<nav>
+										<ul class="navigation__ul">
+											<li class="navigation__list">
+												<a href="#" class="navigation__link">О компании</a>
+											</li>
+											<li class="navigation__list">
+												<a href="#" class="navigation__link">Акции</a>
+											</li>
+											<li class="navigation__list">
+												<a href="#" class="navigation__link">Магазины</a>
+											</li>
+											<li class="navigation__list">
+												<a href="#" class="navigation__link">Новости</a>
+											</li>
+											<li class="navigation__list">
+												<a href="#" class="navigation__link">Товары</a>
+											</li>
+											<li class="navigation__list">
+												<a href="#" class="navigation__link">Напишите нам</a>
+											</li>
+										</ul>
+									</nav>
 								</div>
-							</div>
-							<div class="navigation">
-								<nav>
-									<ul class="navigation__ul">
-										<li class="navigation__list">
-											<a href="#" class="navigation__link">О компании</a>
-										</li>
-										<li class="navigation__list">
-											<a href="#" class="navigation__link">Акции</a>
-										</li>
-										<li class="navigation__list">
-											<a href="#" class="navigation__link">Магазины</a>
-										</li>
-										<li class="navigation__list">
-											<a href="#" class="navigation__link">Новости</a>
-										</li>
-										<li class="navigation__list">
-											<a href="#" class="navigation__link">Товары</a>
-										</li>
-										<li class="navigation__list">
-											<a href="#" class="navigation__link">Напишите нам</a>
-										</li>
-									</ul>
-								</nav>
-							</div>
-							<div class="phone">
-								<a href="tel:88005555505">8-800-555-55-05</a>
+								<div class="phone no-mobile">
+									<a href="tel:88005555505">8-800-555-55-05</a>
+								</div>
+								<!-- Только на мобильных устройтвах -->
+
+								<div class="user-block__enter only-mobile">
+									<a href="#" class="btn-enter">Войти</a>
+								</div>
+								<!-- ++==++ -->
 							</div>
 						</div>
 					</div>
@@ -64,6 +75,11 @@
 								<img src="img/logo.png" srcset="img/logo@2.png 2x" alt="пятёрочка">
 							</a>
 						</div>
+						<!-- Только на мобильных устройтвах -->
+						<div class="user-block__search only-mobile">
+							<a href="#" class="fa fa-search"></a>
+						</div>
+						<!-- ++==++ -->
 						<div class="info-menu">
 							<ul class="info-menu__ul">
 								<li class="info-menu__list">
@@ -77,8 +93,8 @@
 								</li>
 							</ul>
 						</div>
-						<div class="user-block">
-							<div class="user-block__search">
+						<div class="user-block no-mobile">
+							<div class="user-block__search no-mobile">
 								<a href="#" class="fa fa-search"></a>
 							</div>
 							<div class="user-block__enter">
@@ -355,7 +371,7 @@
 			<div class="wrapper-block">
 				<div class="info-menu row">
 					<div class="info-menu__block">
-						<div class="info-menu__head">
+						<div class="info-menu__head trigger">
 							Покупателям
 						</div>
 						<ul class="info-menu__submenu">
@@ -380,7 +396,7 @@
 						</ul>
 					</div>
 					<div class="info-menu__block">
-						<div class="info-menu__head">
+						<div class="info-menu__head trigger">
 							Партнерам
 						</div>
 						<ul class="info-menu__submenu">
@@ -402,7 +418,7 @@
 						</ul>
 					</div>
 					<div class="info-menu__block">
-						<div class="info-menu__head">
+						<div class="info-menu__head trigger">
 							Карьера
 						</div>
 						<ul class="info-menu__submenu">
@@ -430,7 +446,7 @@
 						</ul>
 					</div>
 					<div class="info-menu__block">
-						<div class="info-menu__head">
+						<div class="info-menu__head trigger">
 							Обратная связь
 						</div>
 						<ul class="info-menu__submenu">
