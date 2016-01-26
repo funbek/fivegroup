@@ -1,6 +1,6 @@
-# fivegroup (an <h1> tag)
+# fivegroup
 
-Использованы: (an <h2> tag)
+##Использованы:
 
 * Gulp
 * Scss

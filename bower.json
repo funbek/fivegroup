@@ -20,8 +20,7 @@
     "susy": "~2.2.10",
     "bourbon": "~4.2.6",
     "reset-css": "~2.0.2011012602",
-    "bxslider-4": "fafnur-bxslider#~4.2.5",
-    "mq-sass": "~0.2.0"
+    "bxslider-4": "fafnur-bxslider#~4.2.5"
   },
   "install": {
     "base": "vendor",
