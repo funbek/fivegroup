@@ -29,4 +29,7 @@ $mobile-wrap: 100%;
   @else if $point == mobile {
     @media (max-width: 1000px) { @content; }
   }
+  @else if $point == mobile-xs {
+    @media (max-width: 700px) { @content; }
+  }
 }

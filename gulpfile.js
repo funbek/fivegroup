@@ -23,7 +23,8 @@ var path = {
         css: 'build/css/',
         image: 'build/img/',
         fonts: 'build/fonts/',
-        jsVendor: 'build/js/vendor/'
+        jsVendor: 'build/js/vendor/',
+        conf: 'build/'
     },
     src: { //Пути откуда брать исходники
         html: 'src/*.html', //Синтаксис src/*.html говорит gulp что мы хотим взять все файлы с расширением .html
@@ -32,7 +33,8 @@ var path = {
         css: 'src/css/*.css',
         image: 'src/img/*.*', //Синтаксис img/**/*.* означает - взять все файлы всех расширений из папки и из вложенных каталогов
         fonts: 'src/fonts/**/*.*',
-        jsVendor: 'src/js/vendor/*.js'
+        jsVendor: 'src/js/vendor/*.js',
+        conf: 'src/*.xml'
     },
     watch: { //Тут мы укажем, за изменением каких файлов мы хотим наблюдать
         html: 'src/*.html',
@@ -138,6 +140,12 @@ gulp.task('fonts:build', function() {
         .pipe(gulp.dest(path.build.fonts))
 });
 
+// Собираем конфигурационные файлы
+gulp.task('conf:build', function() {
+    gulp.src(path.src.conf)
+        .pipe(gulp.dest(path.build.conf))
+});
+
 
 // Сборка спрайтов
 gulp.task('spritesmith:build', function() {
@@ -161,7 +169,8 @@ gulp.task('build', [
     'style:build',
     'styleVendor:build',
     'fonts:build',
-    'image:build'
+    'image:build',
+    'conf:build'
     // 'spritesmith:build'
 ]);
 
